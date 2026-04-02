@@ -1,0 +1,44 @@
+🚀 Training Device: cuda
+
+[Step 1] Loading OpenMars Data (Global)...
+OpenMars 最终形状: (6480, 36, 72)
+
+[Step 2] Loading MCD Data (MY27 + MY28)...
+正在读取: MCD_MY27_Lat-90-90_real.nc
+正在读取: MCD_MY28_Lat-90-90_real.nc
+✅ 空间尺寸完美匹配！
+
+[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...
+OpenMars 连续 Ls 范围: 2.72 ~ 428.98
+MCD      连续 Ls 范围: 0.00 ~ 719.93
+✅ 物理对齐完成！两者时间维度现已统一为: 6480
+最终数据集 X_raw: (6480, 36, 72, 2)
+训练集样本数: 5179, 测试集样本数: 1296
+
+[Step 3] Start Training...
+Epoch 1/10 Loss=0.1094
+Epoch 2/10 Loss=0.0475
+Epoch 3/10 Loss=0.0372
+Epoch 4/10 Loss=0.0311
+Epoch 5/10 Loss=0.0271
+Epoch 6/10 Loss=0.0241
+Epoch 7/10 Loss=0.0219
+Epoch 8/10 Loss=0.0200
+Epoch 9/10 Loss=0.0184
+Epoch 10/10 Loss=0.0170
+
+[Step 4] Evaluation...
+
+RMSE: 2.0570
+MAE : 1.1840
+R²  : 0.8819
+
+--- Advanced Metrics ---
+Filtered MAPE (>0.1): 49.91%
+SMAPE: 33.69%
+可视化完成。
+
+模型已保存: predrnn_highlat_gpu_T.pth
+
+[Analysis] Calculating Correlation Matrix...
+✅ 相关矩阵已保存为 correlation_UVPDST.png

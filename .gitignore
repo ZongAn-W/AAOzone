@@ -1,0 +1,62 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ipykernel_
+
+# IDEs
+.vscode/
+.idea/
+
+# Python test / lint
+.pytest_cache/
+.mypy_cache/
+.coverage
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and large files (do not commit datasets or model binaries)
+Dataset/
+
+# Model weights and artifacts
+*.pt
+*.pth
+*.h5
+*.ckpt
+*.model
+weights/
+checkpoints/
+runs/
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets and env
+.env
+*.env
+secrets.yml
+
+# Misc common
+*.log
+*.tmp
+*.cache
+
+# Optional: allow keeping a placeholder file if needed
+!Dataset/.gitkeep

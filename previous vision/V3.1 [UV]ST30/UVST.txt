@@ -1,0 +1,63 @@
+🚀 Training Device: cuda
+
+[Step 1] Loading OpenMars Data (Global)...
+OpenMars 最终形状: (6480, 36, 72)
+
+[Step 2] Loading MCD Data (MY27 + MY28)...
+正在读取: MCD_MY27_Lat-90-90_real.nc
+正在读取: MCD_MY28_Lat-90-90_real.nc
+✅ 空间尺寸完美匹配！
+
+[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...
+OpenMars 连续 Ls 范围: 2.72 ~ 428.98
+MCD      连续 Ls 范围: 0.00 ~ 719.93
+✅ 物理对齐完成！两者时间维度现已统一为: 6480
+最终数据集 X_raw: (6480, 36, 72, 5)
+
+[Step 3] Start Training...
+Epoch 1/30 Loss=0.0820
+Epoch 2/30 Loss=0.0294
+Epoch 3/30 Loss=0.0212
+Epoch 4/30 Loss=0.0168
+Epoch 5/30 Loss=0.0147
+Epoch 6/30 Loss=0.0129
+Epoch 7/30 Loss=0.0112
+Epoch 8/30 Loss=0.0105
+Epoch 9/30 Loss=0.0099
+Epoch 10/30 Loss=0.0090
+Epoch 11/30 Loss=0.0087
+Epoch 12/30 Loss=0.0086
+Epoch 13/30 Loss=0.0080
+Epoch 14/30 Loss=0.0077
+Epoch 15/30 Loss=0.0076
+Epoch 16/30 Loss=0.0071
+Epoch 17/30 Loss=0.0070
+Epoch 18/30 Loss=0.0068
+Epoch 19/30 Loss=0.0069
+Epoch 20/30 Loss=0.0064
+Epoch 21/30 Loss=0.0062
+Epoch 22/30 Loss=0.0062
+Epoch 23/30 Loss=0.0059
+Epoch 24/30 Loss=0.0058
+Epoch 25/30 Loss=0.0059
+Epoch 26/30 Loss=0.0058
+Epoch 27/30 Loss=0.0056
+Epoch 28/30 Loss=0.0054
+Epoch 29/30 Loss=0.0053
+Epoch 30/30 Loss=0.0053
+
+[Step 4] Evaluation...
+
+RMSE: 1.1784
+MAE : 0.7281
+R²  : 0.9612
+
+--- Advanced Metrics ---
+Filtered MAPE (>0.1): 26.32%
+SMAPE: 24.43%
+可视化完成。
+
+模型已保存: predrnn_highlat_gpu_UVST.pth
+
+[Analysis] Calculating Correlation Matrix...
+✅ 相关矩阵已保存为 correlation_matrix.png
