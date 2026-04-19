@@ -1,0 +1,104 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] SimVP_Raw
+SimVP_Raw | Epoch 1/20 | Train Loss: 0.0350 | Val Loss: 0.0188
+Validation loss decreased (inf --> 0.018761). Saving model ...
+SimVP_Raw | Epoch 2/20 | Train Loss: 0.0113 | Val Loss: 0.0169
+Validation loss decreased (0.018761 --> 0.016949). Saving model ...
+SimVP_Raw | Epoch 3/20 | Train Loss: 0.0084 | Val Loss: 0.0121
+Validation loss decreased (0.016949 --> 0.012140). Saving model ...
+SimVP_Raw | Epoch 4/20 | Train Loss: 0.0070 | Val Loss: 0.0115
+Validation loss decreased (0.012140 --> 0.011483). Saving model ...
+SimVP_Raw | Epoch 5/20 | Train Loss: 0.0059 | Val Loss: 0.0108
+Validation loss decreased (0.011483 --> 0.010758). Saving model ...
+SimVP_Raw | Epoch 6/20 | Train Loss: 0.0051 | Val Loss: 0.0102
+Validation loss decreased (0.010758 --> 0.010186). Saving model ...
+SimVP_Raw | Epoch 7/20 | Train Loss: 0.0047 | Val Loss: 0.0091
+Validation loss decreased (0.010186 --> 0.009110). Saving model ...
+SimVP_Raw | Epoch 8/20 | Train Loss: 0.0042 | Val Loss: 0.0091
+Validation loss decreased (0.009110 --> 0.009104). Saving model ...
+SimVP_Raw | Epoch 9/20 | Train Loss: 0.0038 | Val Loss: 0.0097
+EarlyStopping counter: 1 out of 5
+SimVP_Raw | Epoch 10/20 | Train Loss: 0.0036 | Val Loss: 0.0086
+Validation loss decreased (0.009104 --> 0.008627). Saving model ...
+SimVP_Raw | Epoch 11/20 | Train Loss: 0.0032 | Val Loss: 0.0085
+Validation loss decreased (0.008627 --> 0.008519). Saving model ...
+SimVP_Raw | Epoch 12/20 | Train Loss: 0.0031 | Val Loss: 0.0088
+EarlyStopping counter: 1 out of 5
+SimVP_Raw | Epoch 13/20 | Train Loss: 0.0028 | Val Loss: 0.0082
+Validation loss decreased (0.008519 --> 0.008210). Saving model ...
+SimVP_Raw | Epoch 14/20 | Train Loss: 0.0027 | Val Loss: 0.0094
+EarlyStopping counter: 1 out of 5
+SimVP_Raw | Epoch 15/20 | Train Loss: 0.0025 | Val Loss: 0.0085
+EarlyStopping counter: 2 out of 5
+SimVP_Raw | Epoch 16/20 | Train Loss: 0.0023 | Val Loss: 0.0093
+EarlyStopping counter: 3 out of 5
+SimVP_Raw | Epoch 17/20 | Train Loss: 0.0023 | Val Loss: 0.0080
+Validation loss decreased (0.008210 --> 0.008031). Saving model ...
+SimVP_Raw | Epoch 18/20 | Train Loss: 0.0021 | Val Loss: 0.0082
+EarlyStopping counter: 1 out of 5
+SimVP_Raw | Epoch 19/20 | Train Loss: 0.0022 | Val Loss: 0.0081
+EarlyStopping counter: 2 out of 5
+SimVP_Raw | Epoch 20/20 | Train Loss: 0.0019 | Val Loss: 0.0082
+EarlyStopping counter: 3 out of 5
+SimVP_Raw weights saved to: D:\AAOzone\models\训练结果\simvp_raw.pth
+SimVP_Raw Metrics | RMSE: 0.9656 | MAE: 0.5570 | R^2: 0.9740 | SMAPE: 16.97%
+
+[Experiment] SimVP_PhaseWarp
+SimVP_PhaseWarp | Epoch 1/20 | Train Loss: 0.0348 | Val Loss: 0.0182
+Validation loss decreased (inf --> 0.018217). Saving model ...
+SimVP_PhaseWarp | Epoch 2/20 | Train Loss: 0.0104 | Val Loss: 0.0154
+Validation loss decreased (0.018217 --> 0.015357). Saving model ...
+SimVP_PhaseWarp | Epoch 3/20 | Train Loss: 0.0076 | Val Loss: 0.0112
+Validation loss decreased (0.015357 --> 0.011170). Saving model ...
+SimVP_PhaseWarp | Epoch 4/20 | Train Loss: 0.0064 | Val Loss: 0.0103
+Validation loss decreased (0.011170 --> 0.010349). Saving model ...
+SimVP_PhaseWarp | Epoch 5/20 | Train Loss: 0.0056 | Val Loss: 0.0119
+EarlyStopping counter: 1 out of 5
+SimVP_PhaseWarp | Epoch 6/20 | Train Loss: 0.0046 | Val Loss: 0.0096
+Validation loss decreased (0.010349 --> 0.009577). Saving model ...
+SimVP_PhaseWarp | Epoch 7/20 | Train Loss: 0.0042 | Val Loss: 0.0087
+Validation loss decreased (0.009577 --> 0.008725). Saving model ...
+SimVP_PhaseWarp | Epoch 8/20 | Train Loss: 0.0038 | Val Loss: 0.0091
+EarlyStopping counter: 1 out of 5
+SimVP_PhaseWarp | Epoch 9/20 | Train Loss: 0.0034 | Val Loss: 0.0079
+Validation loss decreased (0.008725 --> 0.007935). Saving model ...
+SimVP_PhaseWarp | Epoch 10/20 | Train Loss: 0.0032 | Val Loss: 0.0084
+EarlyStopping counter: 1 out of 5
+SimVP_PhaseWarp | Epoch 11/20 | Train Loss: 0.0030 | Val Loss: 0.0087
+EarlyStopping counter: 2 out of 5
+SimVP_PhaseWarp | Epoch 12/20 | Train Loss: 0.0027 | Val Loss: 0.0084
+EarlyStopping counter: 3 out of 5
+SimVP_PhaseWarp | Epoch 13/20 | Train Loss: 0.0027 | Val Loss: 0.0078
+Validation loss decreased (0.007935 --> 0.007801). Saving model ...
+SimVP_PhaseWarp | Epoch 14/20 | Train Loss: 0.0024 | Val Loss: 0.0080
+EarlyStopping counter: 1 out of 5
+SimVP_PhaseWarp | Epoch 15/20 | Train Loss: 0.0023 | Val Loss: 0.0080
+EarlyStopping counter: 2 out of 5
+SimVP_PhaseWarp | Epoch 16/20 | Train Loss: 0.0022 | Val Loss: 0.0082
+EarlyStopping counter: 3 out of 5
+SimVP_PhaseWarp | Epoch 17/20 | Train Loss: 0.0021 | Val Loss: 0.0078
+Validation loss decreased (0.007801 --> 0.007764). Saving model ...
+SimVP_PhaseWarp | Epoch 18/20 | Train Loss: 0.0020 | Val Loss: 0.0077
+Validation loss decreased (0.007764 --> 0.007744). Saving model ...
+SimVP_PhaseWarp | Epoch 19/20 | Train Loss: 0.0019 | Val Loss: 0.0077
+Validation loss decreased (0.007744 --> 0.007690). Saving model ...
+SimVP_PhaseWarp | Epoch 20/20 | Train Loss: 0.0018 | Val Loss: 0.0081
+EarlyStopping counter: 1 out of 5
+SimVP_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\simvp_phasewarp.pth
+SimVP_PhaseWarp Metrics | RMSE: 0.9445 | MAE: 0.5463 | R^2: 0.9751 | SMAPE: 16.24%
+
+[Comparison Summary]
+RMSE improvement: 0.0212
+MAE improvement : 0.0107
+R^2 gain        : 0.0011
+SMAPE gain      : 0.73%

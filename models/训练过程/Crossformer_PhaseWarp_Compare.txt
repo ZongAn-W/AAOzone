@@ -1,0 +1,62 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] Crossformer_Raw
+Crossformer_Raw | Epoch 1/20 | Train Loss: 0.2476 | Val Loss: 0.1963
+Validation loss decreased (inf --> 0.196274). Saving model ...
+Crossformer_Raw | Epoch 2/20 | Train Loss: 0.1786 | Val Loss: 0.1861
+Validation loss decreased (0.196274 --> 0.186084). Saving model ...
+Crossformer_Raw | Epoch 3/20 | Train Loss: 0.1736 | Val Loss: 0.1770
+Validation loss decreased (0.186084 --> 0.177013). Saving model ...
+Crossformer_Raw | Epoch 4/20 | Train Loss: 0.1723 | Val Loss: 0.2059
+EarlyStopping counter: 1 out of 5
+Crossformer_Raw | Epoch 5/20 | Train Loss: 0.1709 | Val Loss: 0.1961
+EarlyStopping counter: 2 out of 5
+Crossformer_Raw | Epoch 6/20 | Train Loss: 0.1702 | Val Loss: 0.2018
+EarlyStopping counter: 3 out of 5
+Crossformer_Raw | Epoch 7/20 | Train Loss: 0.1700 | Val Loss: 0.1688
+Validation loss decreased (0.177013 --> 0.168756). Saving model ...
+Crossformer_Raw | Epoch 8/20 | Train Loss: 0.1684 | Val Loss: 0.1821
+EarlyStopping counter: 1 out of 5
+Crossformer_Raw | Epoch 9/20 | Train Loss: 0.1682 | Val Loss: 0.1896
+EarlyStopping counter: 2 out of 5
+Crossformer_Raw | Epoch 10/20 | Train Loss: 0.1678 | Val Loss: 0.1722
+EarlyStopping counter: 3 out of 5
+Crossformer_Raw | Epoch 11/20 | Train Loss: 0.1648 | Val Loss: 0.1768
+EarlyStopping counter: 4 out of 5
+Crossformer_Raw | Epoch 12/20 | Train Loss: 0.1656 | Val Loss: 0.1755
+EarlyStopping counter: 5 out of 5
+Crossformer_Raw triggered early stopping.
+Crossformer_Raw weights saved to: D:\AAOzone\models\训练结果\crossformer_raw.pth
+Crossformer_Raw Metrics | RMSE: 4.6866 | MAE: 3.3551 | R^2: 0.3867 | SMAPE: 79.31%
+
+[Experiment] Crossformer_PhaseWarp
+Crossformer_PhaseWarp | Epoch 1/20 | Train Loss: 0.2038 | Val Loss: 0.1585
+Validation loss decreased (inf --> 0.158474). Saving model ...
+Crossformer_PhaseWarp | Epoch 2/20 | Train Loss: 0.2279 | Val Loss: 0.1763
+EarlyStopping counter: 1 out of 5
+Crossformer_PhaseWarp | Epoch 3/20 | Train Loss: 0.2696 | Val Loss: 0.1754
+EarlyStopping counter: 2 out of 5
+Crossformer_PhaseWarp | Epoch 4/20 | Train Loss: 0.2584 | Val Loss: 0.1826
+EarlyStopping counter: 3 out of 5
+Crossformer_PhaseWarp | Epoch 5/20 | Train Loss: 0.2375 | Val Loss: 0.2203
+EarlyStopping counter: 4 out of 5
+Crossformer_PhaseWarp | Epoch 6/20 | Train Loss: 0.2117 | Val Loss: 0.2290
+EarlyStopping counter: 5 out of 5
+Crossformer_PhaseWarp triggered early stopping.
+Crossformer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\crossformer_phasewarp.pth
+Crossformer_PhaseWarp Metrics | RMSE: 4.5462 | MAE: 3.1938 | R^2: 0.4229 | SMAPE: 75.88%
+
+[Comparison Summary]
+RMSE improvement: 0.1404
+MAE improvement : 0.1613
+R^2 gain        : 0.0362
+SMAPE gain      : 3.43%

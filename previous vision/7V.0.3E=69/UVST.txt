@@ -1,0 +1,186 @@
+🚀 Training Device: cuda
+
+[Step 1] Loading OpenMars Data (Global)...
+OpenMars 最终形状: (6480, 36, 72)
+
+[Step 2] Loading MCD Data (MY27 + MY28)...
+正在读取: MCD_MY27_Lat-90-90_real.nc
+正在读取: MCD_MY28_Lat-90-90_real.nc
+
+[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...
+
+[Step 3] Start Training...
+Epoch 1/100 | Train Loss: 0.0830 | Val Loss: 0.0548
+Validation loss decreased (inf --> 0.054825).  Saving model ...
+Epoch 2/100 | Train Loss: 0.0277 | Val Loss: 0.0384
+Validation loss decreased (0.054825 --> 0.038402).  Saving model ...
+Epoch 3/100 | Train Loss: 0.0194 | Val Loss: 0.0261
+Validation loss decreased (0.038402 --> 0.026127).  Saving model ...
+Epoch 4/100 | Train Loss: 0.0154 | Val Loss: 0.0237
+Validation loss decreased (0.026127 --> 0.023725).  Saving model ...
+Epoch 5/100 | Train Loss: 0.0132 | Val Loss: 0.0215
+Validation loss decreased (0.023725 --> 0.021506).  Saving model ...
+Epoch 6/100 | Train Loss: 0.0116 | Val Loss: 0.0203
+Validation loss decreased (0.021506 --> 0.020300).  Saving model ...
+Epoch 7/100 | Train Loss: 0.0104 | Val Loss: 0.0178
+Validation loss decreased (0.020300 --> 0.017822).  Saving model ...
+Epoch 8/100 | Train Loss: 0.0099 | Val Loss: 0.0181
+EarlyStopping counter: 1 out of 5
+Epoch 9/100 | Train Loss: 0.0091 | Val Loss: 0.0173
+Validation loss decreased (0.017822 --> 0.017304).  Saving model ...
+Epoch 10/100 | Train Loss: 0.0086 | Val Loss: 0.0167
+Validation loss decreased (0.017304 --> 0.016670).  Saving model ...
+Epoch 11/100 | Train Loss: 0.0082 | Val Loss: 0.0155
+Validation loss decreased (0.016670 --> 0.015488).  Saving model ...
+Epoch 12/100 | Train Loss: 0.0079 | Val Loss: 0.0156
+EarlyStopping counter: 1 out of 5
+Epoch 13/100 | Train Loss: 0.0078 | Val Loss: 0.0145
+Validation loss decreased (0.015488 --> 0.014540).  Saving model ...
+Epoch 14/100 | Train Loss: 0.0073 | Val Loss: 0.0157
+EarlyStopping counter: 1 out of 5
+Epoch 15/100 | Train Loss: 0.0071 | Val Loss: 0.0141
+Validation loss decreased (0.014540 --> 0.014124).  Saving model ...
+Epoch 16/100 | Train Loss: 0.0069 | Val Loss: 0.0144
+EarlyStopping counter: 1 out of 5
+Epoch 17/100 | Train Loss: 0.0069 | Val Loss: 0.0130
+Validation loss decreased (0.014124 --> 0.012952).  Saving model ...
+Epoch 18/100 | Train Loss: 0.0066 | Val Loss: 0.0140
+EarlyStopping counter: 1 out of 5
+Epoch 19/100 | Train Loss: 0.0065 | Val Loss: 0.0135
+EarlyStopping counter: 2 out of 5
+Epoch 20/100 | Train Loss: 0.0063 | Val Loss: 0.0130
+EarlyStopping counter: 3 out of 5
+Epoch 21/100 | Train Loss: 0.0063 | Val Loss: 0.0132
+EarlyStopping counter: 4 out of 5
+Epoch 22/100 | Train Loss: 0.0060 | Val Loss: 0.0128
+Validation loss decreased (0.012952 --> 0.012830).  Saving model ...
+Epoch 23/100 | Train Loss: 0.0059 | Val Loss: 0.0126
+Validation loss decreased (0.012830 --> 0.012638).  Saving model ...
+Epoch 24/100 | Train Loss: 0.0058 | Val Loss: 0.0127
+EarlyStopping counter: 1 out of 5
+Epoch 25/100 | Train Loss: 0.0057 | Val Loss: 0.0123
+Validation loss decreased (0.012638 --> 0.012297).  Saving model ...
+Epoch 26/100 | Train Loss: 0.0056 | Val Loss: 0.0120
+Validation loss decreased (0.012297 --> 0.012012).  Saving model ...
+Epoch 27/100 | Train Loss: 0.0055 | Val Loss: 0.0118
+Validation loss decreased (0.012012 --> 0.011814).  Saving model ...
+Epoch 28/100 | Train Loss: 0.0055 | Val Loss: 0.0123
+EarlyStopping counter: 1 out of 5
+Epoch 29/100 | Train Loss: 0.0054 | Val Loss: 0.0118
+Validation loss decreased (0.011814 --> 0.011775).  Saving model ...
+Epoch 30/100 | Train Loss: 0.0053 | Val Loss: 0.0114
+Validation loss decreased (0.011775 --> 0.011390).  Saving model ...
+Epoch 31/100 | Train Loss: 0.0052 | Val Loss: 0.0114
+Validation loss decreased (0.011390 --> 0.011384).  Saving model ...
+Epoch 32/100 | Train Loss: 0.0051 | Val Loss: 0.0113
+Validation loss decreased (0.011384 --> 0.011322).  Saving model ...
+Epoch 33/100 | Train Loss: 0.0051 | Val Loss: 0.0117
+EarlyStopping counter: 1 out of 5
+Epoch 34/100 | Train Loss: 0.0050 | Val Loss: 0.0118
+EarlyStopping counter: 2 out of 5
+Epoch 35/100 | Train Loss: 0.0049 | Val Loss: 0.0110
+Validation loss decreased (0.011322 --> 0.010969).  Saving model ...
+Epoch 36/100 | Train Loss: 0.0048 | Val Loss: 0.0108
+Validation loss decreased (0.010969 --> 0.010775).  Saving model ...
+Epoch 37/100 | Train Loss: 0.0048 | Val Loss: 0.0111
+EarlyStopping counter: 1 out of 5
+Epoch 38/100 | Train Loss: 0.0047 | Val Loss: 0.0112
+EarlyStopping counter: 2 out of 5
+Epoch 39/100 | Train Loss: 0.0047 | Val Loss: 0.0112
+EarlyStopping counter: 3 out of 5
+Epoch 40/100 | Train Loss: 0.0046 | Val Loss: 0.0112
+EarlyStopping counter: 4 out of 5
+Epoch 41/100 | Train Loss: 0.0045 | Val Loss: 0.0106
+Validation loss decreased (0.010775 --> 0.010649).  Saving model ...
+Epoch 42/100 | Train Loss: 0.0045 | Val Loss: 0.0107
+EarlyStopping counter: 1 out of 5
+Epoch 43/100 | Train Loss: 0.0044 | Val Loss: 0.0104
+Validation loss decreased (0.010649 --> 0.010405).  Saving model ...
+Epoch 44/100 | Train Loss: 0.0045 | Val Loss: 0.0112
+EarlyStopping counter: 1 out of 5
+Epoch 45/100 | Train Loss: 0.0043 | Val Loss: 0.0104
+EarlyStopping counter: 2 out of 5
+Epoch 46/100 | Train Loss: 0.0042 | Val Loss: 0.0104
+EarlyStopping counter: 3 out of 5
+Epoch 47/100 | Train Loss: 0.0043 | Val Loss: 0.0103
+Validation loss decreased (0.010405 --> 0.010339).  Saving model ...
+Epoch 48/100 | Train Loss: 0.0043 | Val Loss: 0.0105
+EarlyStopping counter: 1 out of 5
+Epoch 49/100 | Train Loss: 0.0041 | Val Loss: 0.0102
+Validation loss decreased (0.010339 --> 0.010219).  Saving model ...
+Epoch 50/100 | Train Loss: 0.0041 | Val Loss: 0.0105
+EarlyStopping counter: 1 out of 5
+Epoch 51/100 | Train Loss: 0.0040 | Val Loss: 0.0109
+EarlyStopping counter: 2 out of 5
+Epoch 52/100 | Train Loss: 0.0040 | Val Loss: 0.0100
+Validation loss decreased (0.010219 --> 0.009985).  Saving model ...
+Epoch 53/100 | Train Loss: 0.0040 | Val Loss: 0.0100
+EarlyStopping counter: 1 out of 5
+Epoch 54/100 | Train Loss: 0.0039 | Val Loss: 0.0100
+Validation loss decreased (0.009985 --> 0.009953).  Saving model ...
+Epoch 55/100 | Train Loss: 0.0040 | Val Loss: 0.0101
+EarlyStopping counter: 1 out of 5
+Epoch 56/100 | Train Loss: 0.0038 | Val Loss: 0.0101
+EarlyStopping counter: 2 out of 5
+Epoch 57/100 | Train Loss: 0.0038 | Val Loss: 0.0103
+EarlyStopping counter: 3 out of 5
+Epoch 58/100 | Train Loss: 0.0038 | Val Loss: 0.0101
+EarlyStopping counter: 4 out of 5
+Epoch 59/100 | Train Loss: 0.0037 | Val Loss: 0.0097
+Validation loss decreased (0.009953 --> 0.009709).  Saving model ...
+Epoch 60/100 | Train Loss: 0.0037 | Val Loss: 0.0099
+EarlyStopping counter: 1 out of 5
+Epoch 61/100 | Train Loss: 0.0037 | Val Loss: 0.0098
+EarlyStopping counter: 2 out of 5
+Epoch 62/100 | Train Loss: 0.0037 | Val Loss: 0.0098
+EarlyStopping counter: 3 out of 5
+Epoch 63/100 | Train Loss: 0.0036 | Val Loss: 0.0105
+EarlyStopping counter: 4 out of 5
+Epoch 64/100 | Train Loss: 0.0036 | Val Loss: 0.0095
+Validation loss decreased (0.009709 --> 0.009455).  Saving model ...
+Epoch 65/100 | Train Loss: 0.0035 | Val Loss: 0.0098
+EarlyStopping counter: 1 out of 5
+Epoch 66/100 | Train Loss: 0.0036 | Val Loss: 0.0099
+EarlyStopping counter: 2 out of 5
+Epoch 67/100 | Train Loss: 0.0035 | Val Loss: 0.0099
+EarlyStopping counter: 3 out of 5
+Epoch 68/100 | Train Loss: 0.0036 | Val Loss: 0.0100
+EarlyStopping counter: 4 out of 5
+Epoch 69/100 | Train Loss: 0.0034 | Val Loss: 0.0099
+EarlyStopping counter: 5 out of 5
+🛑 Early stopping triggered. Training stopped.
+🔄 Loading best model state from checkpoint...
+
+[Step 4] Evaluation...
+
+RMSE: 1.0474
+MAE : 0.6242
+R²  : 0.9694
+
+--- Advanced Metrics ---
+Filtered MAPE (>0.1): 21.71%
+SMAPE: 20.28%
+
+[Visualization] Batch plotting spatial modulation parameters...
+✅ 空间调制模块图 (O3) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_O3.png
+✅ 空间调制模块图 (U_Wind_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_U_Wind_Sin.png
+✅ 空间调制模块图 (U_Wind_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_U_Wind_Cos.png
+✅ 空间调制模块图 (V_Wind_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_V_Wind_Sin.png
+✅ 空间调制模块图 (V_Wind_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_V_Wind_Cos.png
+✅ 空间调制模块图 (Temperature_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Temperature_Sin.png
+✅ 空间调制模块图 (Temperature_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Temperature_Cos.png
+✅ 空间调制模块图 (Solar_Flux_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Solar_Flux_Sin.png
+✅ 空间调制模块图 (Solar_Flux_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Solar_Flux_Cos.png
+✅ 纬向误差分析图已保存: D:\AAOzone\models\训练结果\Zonal_Mean_Error.png
+高质量绘图失败: name 'min_val' is not defined
+
+模型已保存: predrnn_highlat_gpu_UVST.pth
+
+[Analysis] Starting PFI (Permutation Feature Importance)...
+基准 RMSE: 1.0474
+特征 [Prev_O3] 置换后 RMSE: 4.9611, 增加量: 3.9137
+特征 [U_Wind] 置换后 RMSE: 2.1381, 增加量: 1.0906
+特征 [V_Wind] 置换后 RMSE: 1.1092, 增加量: 0.0617
+特征 [Temperature] 置换后 RMSE: 1.6739, 增加量: 0.6265
+特征 [Solar_Flux] 置换后 RMSE: 1.6971, 增加量: 0.6496
+✅ PFI 分析图表已保存为 PFI_Analysis_Fixed.png

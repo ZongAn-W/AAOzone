@@ -1,0 +1,40 @@
+🚀 Training Device: cuda [MODE: BASELINE WITHOUT Ls]
+
+[Step 1] Loading OpenMars Data (Global)...
+
+[Step 2] Loading MCD Data (MY27 + MY28)...
+
+[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...
+
+[Step 3] Start Training Baseline Model...
+Epoch 1/10 Loss=0.0933
+Epoch 2/10 Loss=0.0325
+Epoch 3/10 Loss=0.0232
+Epoch 4/10 Loss=0.0192
+Epoch 5/10 Loss=0.0162
+Epoch 6/10 Loss=0.0148
+Epoch 7/10 Loss=0.0134
+Epoch 8/10 Loss=0.0122
+Epoch 9/10 Loss=0.0113
+Epoch 10/10 Loss=0.0108
+
+[Step 4] Evaluation...
+
+RMSE: 1.7083
+MAE : 1.0655
+R²  : 0.9185
+
+--- Advanced Metrics ---
+Filtered MAPE (>0.1): 41.01%
+SMAPE: 31.38%
+
+模型已保存: predrnn_highlat_gpu_baseline_No_Ls.pth
+
+[Analysis] Starting PFI for Baseline...
+基准 RMSE: 1.7083
+特征 [Prev_O3] 置换后 RMSE: 5.3083, 增加量: 3.6000
+特征 [U_Wind] 置换后 RMSE: 2.1860, 增加量: 0.4776
+特征 [V_Wind] 置换后 RMSE: 2.0603, 增加量: 0.3520
+特征 [Temperature] 置换后 RMSE: 2.1796, 增加量: 0.4713
+特征 [Solar_Flux] 置换后 RMSE: 2.4568, 增加量: 0.7485
+✅ PFI 分析图表已保存为 PFI_Analysis_Baseline.png

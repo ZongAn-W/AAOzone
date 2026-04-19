@@ -1,0 +1,104 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] MAU_Raw
+MAU_Raw | Epoch 1/20 | Train Loss: 0.0323 | Val Loss: 0.0259
+Validation loss decreased (inf --> 0.025919). Saving model ...
+MAU_Raw | Epoch 2/20 | Train Loss: 0.0119 | Val Loss: 0.0222
+Validation loss decreased (0.025919 --> 0.022184). Saving model ...
+MAU_Raw | Epoch 3/20 | Train Loss: 0.0096 | Val Loss: 0.0167
+Validation loss decreased (0.022184 --> 0.016671). Saving model ...
+MAU_Raw | Epoch 4/20 | Train Loss: 0.0088 | Val Loss: 0.0178
+EarlyStopping counter: 1 out of 5
+MAU_Raw | Epoch 5/20 | Train Loss: 0.0082 | Val Loss: 0.0165
+Validation loss decreased (0.016671 --> 0.016489). Saving model ...
+MAU_Raw | Epoch 6/20 | Train Loss: 0.0075 | Val Loss: 0.0132
+Validation loss decreased (0.016489 --> 0.013248). Saving model ...
+MAU_Raw | Epoch 7/20 | Train Loss: 0.0067 | Val Loss: 0.0143
+EarlyStopping counter: 1 out of 5
+MAU_Raw | Epoch 8/20 | Train Loss: 0.0067 | Val Loss: 0.0136
+EarlyStopping counter: 2 out of 5
+MAU_Raw | Epoch 9/20 | Train Loss: 0.0063 | Val Loss: 0.0132
+Validation loss decreased (0.013248 --> 0.013153). Saving model ...
+MAU_Raw | Epoch 10/20 | Train Loss: 0.0060 | Val Loss: 0.0122
+Validation loss decreased (0.013153 --> 0.012234). Saving model ...
+MAU_Raw | Epoch 11/20 | Train Loss: 0.0057 | Val Loss: 0.0129
+EarlyStopping counter: 1 out of 5
+MAU_Raw | Epoch 12/20 | Train Loss: 0.0056 | Val Loss: 0.0123
+EarlyStopping counter: 2 out of 5
+MAU_Raw | Epoch 13/20 | Train Loss: 0.0055 | Val Loss: 0.0129
+EarlyStopping counter: 3 out of 5
+MAU_Raw | Epoch 14/20 | Train Loss: 0.0052 | Val Loss: 0.0126
+EarlyStopping counter: 4 out of 5
+MAU_Raw | Epoch 15/20 | Train Loss: 0.0051 | Val Loss: 0.0119
+Validation loss decreased (0.012234 --> 0.011928). Saving model ...
+MAU_Raw | Epoch 16/20 | Train Loss: 0.0050 | Val Loss: 0.0120
+EarlyStopping counter: 1 out of 5
+MAU_Raw | Epoch 17/20 | Train Loss: 0.0049 | Val Loss: 0.0124
+EarlyStopping counter: 2 out of 5
+MAU_Raw | Epoch 18/20 | Train Loss: 0.0048 | Val Loss: 0.0122
+EarlyStopping counter: 3 out of 5
+MAU_Raw | Epoch 19/20 | Train Loss: 0.0047 | Val Loss: 0.0116
+Validation loss decreased (0.011928 --> 0.011572). Saving model ...
+MAU_Raw | Epoch 20/20 | Train Loss: 0.0046 | Val Loss: 0.0119
+EarlyStopping counter: 1 out of 5
+MAU_Raw weights saved to: D:\AAOzone\models\训练结果\mau_raw.pth
+MAU_Raw Metrics | RMSE: 1.1589 | MAE: 0.7140 | R^2: 0.9625 | SMAPE: 22.45%
+
+[Experiment] MAU_PhaseWarp
+MAU_PhaseWarp | Epoch 1/20 | Train Loss: 0.0295 | Val Loss: 0.0200
+Validation loss decreased (inf --> 0.019986). Saving model ...
+MAU_PhaseWarp | Epoch 2/20 | Train Loss: 0.0113 | Val Loss: 0.0144
+Validation loss decreased (0.019986 --> 0.014424). Saving model ...
+MAU_PhaseWarp | Epoch 3/20 | Train Loss: 0.0084 | Val Loss: 0.0128
+Validation loss decreased (0.014424 --> 0.012825). Saving model ...
+MAU_PhaseWarp | Epoch 4/20 | Train Loss: 0.0077 | Val Loss: 0.0121
+Validation loss decreased (0.012825 --> 0.012142). Saving model ...
+MAU_PhaseWarp | Epoch 5/20 | Train Loss: 0.0070 | Val Loss: 0.0115
+Validation loss decreased (0.012142 --> 0.011542). Saving model ...
+MAU_PhaseWarp | Epoch 6/20 | Train Loss: 0.0068 | Val Loss: 0.0108
+Validation loss decreased (0.011542 --> 0.010845). Saving model ...
+MAU_PhaseWarp | Epoch 7/20 | Train Loss: 0.0065 | Val Loss: 0.0109
+EarlyStopping counter: 1 out of 5
+MAU_PhaseWarp | Epoch 8/20 | Train Loss: 0.0060 | Val Loss: 0.0110
+EarlyStopping counter: 2 out of 5
+MAU_PhaseWarp | Epoch 9/20 | Train Loss: 0.0057 | Val Loss: 0.0111
+EarlyStopping counter: 3 out of 5
+MAU_PhaseWarp | Epoch 10/20 | Train Loss: 0.0055 | Val Loss: 0.0104
+Validation loss decreased (0.010845 --> 0.010355). Saving model ...
+MAU_PhaseWarp | Epoch 11/20 | Train Loss: 0.0053 | Val Loss: 0.0101
+Validation loss decreased (0.010355 --> 0.010085). Saving model ...
+MAU_PhaseWarp | Epoch 12/20 | Train Loss: 0.0051 | Val Loss: 0.0099
+Validation loss decreased (0.010085 --> 0.009851). Saving model ...
+MAU_PhaseWarp | Epoch 13/20 | Train Loss: 0.0049 | Val Loss: 0.0096
+Validation loss decreased (0.009851 --> 0.009639). Saving model ...
+MAU_PhaseWarp | Epoch 14/20 | Train Loss: 0.0049 | Val Loss: 0.0094
+Validation loss decreased (0.009639 --> 0.009388). Saving model ...
+MAU_PhaseWarp | Epoch 15/20 | Train Loss: 0.0046 | Val Loss: 0.0091
+Validation loss decreased (0.009388 --> 0.009118). Saving model ...
+MAU_PhaseWarp | Epoch 16/20 | Train Loss: 0.0045 | Val Loss: 0.0093
+EarlyStopping counter: 1 out of 5
+MAU_PhaseWarp | Epoch 17/20 | Train Loss: 0.0045 | Val Loss: 0.0091
+Validation loss decreased (0.009118 --> 0.009070). Saving model ...
+MAU_PhaseWarp | Epoch 18/20 | Train Loss: 0.0043 | Val Loss: 0.0090
+Validation loss decreased (0.009070 --> 0.009007). Saving model ...
+MAU_PhaseWarp | Epoch 19/20 | Train Loss: 0.0042 | Val Loss: 0.0098
+EarlyStopping counter: 1 out of 5
+MAU_PhaseWarp | Epoch 20/20 | Train Loss: 0.0041 | Val Loss: 0.0092
+EarlyStopping counter: 2 out of 5
+MAU_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\mau_phasewarp.pth
+MAU_PhaseWarp Metrics | RMSE: 1.0222 | MAE: 0.6174 | R^2: 0.9708 | SMAPE: 19.63%
+
+[Comparison Summary]
+RMSE improvement: 0.1367
+MAE improvement : 0.0965
+R^2 gain        : 0.0083
+SMAPE gain      : 2.81%

@@ -1,0 +1,57 @@
+🚀 Training Device: cuda
+
+[Step 1] Loading OpenMars Data (Global)...
+OpenMars 最终形状: (6480, 36, 72)
+
+[Step 2] Loading MCD Data (MY27 + MY28)...
+正在读取: MCD_MY27_Lat-90-90_real.nc
+正在读取: MCD_MY28_Lat-90-90_real.nc
+
+[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...
+
+[Step 3] Start Training...
+Epoch 1/10 | Train Loss: 0.0810 | Val Loss: 0.0554
+Validation loss decreased (inf --> 0.055353).  Saving model ...
+Epoch 2/10 | Train Loss: 0.0267 | Val Loss: 0.0349
+Validation loss decreased (0.055353 --> 0.034880).  Saving model ...
+Epoch 3/10 | Train Loss: 0.0186 | Val Loss: 0.0268
+Validation loss decreased (0.034880 --> 0.026777).  Saving model ...
+Epoch 4/10 | Train Loss: 0.0148 | Val Loss: 0.0226
+Validation loss decreased (0.026777 --> 0.022570).  Saving model ...
+Epoch 5/10 | Train Loss: 0.0129 | Val Loss: 0.0214
+Validation loss decreased (0.022570 --> 0.021366).  Saving model ...
+Epoch 6/10 | Train Loss: 0.0114 | Val Loss: 0.0191
+Validation loss decreased (0.021366 --> 0.019112).  Saving model ...
+Epoch 7/10 | Train Loss: 0.0106 | Val Loss: 0.0174
+Validation loss decreased (0.019112 --> 0.017354).  Saving model ...
+Epoch 8/10 | Train Loss: 0.0096 | Val Loss: 0.0167
+Validation loss decreased (0.017354 --> 0.016716).  Saving model ...
+Epoch 9/10 | Train Loss: 0.0091 | Val Loss: 0.0166
+Validation loss decreased (0.016716 --> 0.016573).  Saving model ...
+Epoch 10/10 | Train Loss: 0.0086 | Val Loss: 0.0152
+Validation loss decreased (0.016573 --> 0.015218).  Saving model ...
+🔄 Loading best model state from checkpoint...
+
+[Step 4] Evaluation...
+
+RMSE: 1.3299
+MAE : 0.8540
+R²  : 0.9506
+
+--- Advanced Metrics ---
+Filtered MAPE (>0.1): 36.51%
+SMAPE: 29.71%
+✅ 空间调制模块图已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Module.png
+✅ 纬向误差分析图已保存: D:\AAOzone\models\训练结果\Zonal_Mean_Error.png
+高质量绘图失败: name 'min_val' is not defined
+
+模型已保存: predrnn_highlat_gpu_UVST.pth
+
+[Analysis] Starting PFI (Permutation Feature Importance)...
+基准 RMSE: 1.3299
+特征 [Prev_O3] 置换后 RMSE: 5.0394, 增加量: 3.7096
+特征 [U_Wind] 置换后 RMSE: 2.2782, 增加量: 0.9483
+特征 [V_Wind] 置换后 RMSE: 1.4580, 增加量: 0.1282
+特征 [Temperature] 置换后 RMSE: 1.9326, 增加量: 0.6027
+特征 [Solar_Flux] 置换后 RMSE: 2.1799, 增加量: 0.8500
+✅ PFI 分析图表已保存为 PFI_Analysis_Fixed.png

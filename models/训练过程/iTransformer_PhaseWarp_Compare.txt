@@ -1,0 +1,79 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] iTransformer_Raw
+iTransformer_Raw | Epoch 1/20 | Train Loss: 0.2426 | Val Loss: 0.2165
+Validation loss decreased (inf --> 0.216521). Saving model ...
+iTransformer_Raw | Epoch 2/20 | Train Loss: 0.1571 | Val Loss: 0.1568
+Validation loss decreased (0.216521 --> 0.156837). Saving model ...
+iTransformer_Raw | Epoch 3/20 | Train Loss: 0.1419 | Val Loss: 0.1457
+Validation loss decreased (0.156837 --> 0.145736). Saving model ...
+iTransformer_Raw | Epoch 4/20 | Train Loss: 0.1366 | Val Loss: 0.1455
+Validation loss decreased (0.145736 --> 0.145477). Saving model ...
+iTransformer_Raw | Epoch 5/20 | Train Loss: 0.1334 | Val Loss: 0.1338
+Validation loss decreased (0.145477 --> 0.133810). Saving model ...
+iTransformer_Raw | Epoch 6/20 | Train Loss: 0.1309 | Val Loss: 0.1289
+Validation loss decreased (0.133810 --> 0.128868). Saving model ...
+iTransformer_Raw | Epoch 7/20 | Train Loss: 0.1295 | Val Loss: 0.1282
+Validation loss decreased (0.128868 --> 0.128209). Saving model ...
+iTransformer_Raw | Epoch 8/20 | Train Loss: 0.1283 | Val Loss: 0.1273
+Validation loss decreased (0.128209 --> 0.127262). Saving model ...
+iTransformer_Raw | Epoch 9/20 | Train Loss: 0.1276 | Val Loss: 0.1322
+EarlyStopping counter: 1 out of 5
+iTransformer_Raw | Epoch 10/20 | Train Loss: 0.1267 | Val Loss: 0.1333
+EarlyStopping counter: 2 out of 5
+iTransformer_Raw | Epoch 11/20 | Train Loss: 0.1261 | Val Loss: 0.1326
+EarlyStopping counter: 3 out of 5
+iTransformer_Raw | Epoch 12/20 | Train Loss: 0.1256 | Val Loss: 0.1256
+Validation loss decreased (0.127262 --> 0.125552). Saving model ...
+iTransformer_Raw | Epoch 13/20 | Train Loss: 0.1251 | Val Loss: 0.1258
+EarlyStopping counter: 1 out of 5
+iTransformer_Raw | Epoch 14/20 | Train Loss: 0.1246 | Val Loss: 0.1325
+EarlyStopping counter: 2 out of 5
+iTransformer_Raw | Epoch 15/20 | Train Loss: 0.1244 | Val Loss: 0.1232
+Validation loss decreased (0.125552 --> 0.123180). Saving model ...
+iTransformer_Raw | Epoch 16/20 | Train Loss: 0.1239 | Val Loss: 0.1244
+EarlyStopping counter: 1 out of 5
+iTransformer_Raw | Epoch 17/20 | Train Loss: 0.1235 | Val Loss: 0.1250
+EarlyStopping counter: 2 out of 5
+iTransformer_Raw | Epoch 18/20 | Train Loss: 0.1232 | Val Loss: 0.1292
+EarlyStopping counter: 3 out of 5
+iTransformer_Raw | Epoch 19/20 | Train Loss: 0.1230 | Val Loss: 0.1230
+Validation loss decreased (0.123180 --> 0.123023). Saving model ...
+iTransformer_Raw | Epoch 20/20 | Train Loss: 0.1226 | Val Loss: 0.1350
+EarlyStopping counter: 1 out of 5
+iTransformer_Raw weights saved to: D:\AAOzone\models\训练结果\itransformer_raw.pth
+iTransformer_Raw Metrics | RMSE: 4.0319 | MAE: 2.8145 | R^2: 0.5461 | SMAPE: 70.10%
+
+[Experiment] iTransformer_PhaseWarp
+iTransformer_PhaseWarp | Epoch 1/20 | Train Loss: 0.2307 | Val Loss: 0.1260
+Validation loss decreased (inf --> 0.126002). Saving model ...
+iTransformer_PhaseWarp | Epoch 2/20 | Train Loss: 0.1766 | Val Loss: 0.1194
+Validation loss decreased (0.126002 --> 0.119363). Saving model ...
+iTransformer_PhaseWarp | Epoch 3/20 | Train Loss: 0.1651 | Val Loss: 0.1254
+EarlyStopping counter: 1 out of 5
+iTransformer_PhaseWarp | Epoch 4/20 | Train Loss: 0.1560 | Val Loss: 0.1257
+EarlyStopping counter: 2 out of 5
+iTransformer_PhaseWarp | Epoch 5/20 | Train Loss: 0.1575 | Val Loss: 0.1320
+EarlyStopping counter: 3 out of 5
+iTransformer_PhaseWarp | Epoch 6/20 | Train Loss: 0.1577 | Val Loss: 0.1419
+EarlyStopping counter: 4 out of 5
+iTransformer_PhaseWarp | Epoch 7/20 | Train Loss: 0.1550 | Val Loss: 0.1366
+EarlyStopping counter: 5 out of 5
+iTransformer_PhaseWarp triggered early stopping.
+iTransformer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\itransformer_phasewarp.pth
+iTransformer_PhaseWarp Metrics | RMSE: 3.9752 | MAE: 2.7037 | R^2: 0.5588 | SMAPE: 76.31%
+
+[Comparison Summary]
+RMSE improvement: 0.0567
+MAE improvement : 0.1108
+R^2 gain        : 0.0127
+SMAPE gain      : -6.21%

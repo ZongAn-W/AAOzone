@@ -1,0 +1,35 @@
+🚀 Training Device: cuda [MODE: BASELINE WITH CONCAT Ls]
+
+[Step 1 & 2] Loading OpenMars and MCD Data...
+
+[Step 4] Time Alignment...
+
+[Step 3] Start Training Baseline (Concat Ls)...
+Epoch 1/10 Loss=0.0874
+Epoch 2/10 Loss=0.0317
+Epoch 3/10 Loss=0.0226
+Epoch 4/10 Loss=0.0189
+Epoch 5/10 Loss=0.0164
+Epoch 6/10 Loss=0.0148
+Epoch 7/10 Loss=0.0133
+Epoch 8/10 Loss=0.0124
+Epoch 9/10 Loss=0.0115
+Epoch 10/10 Loss=0.0110
+
+[Step 4] Evaluation...
+
+RMSE: 1.9189
+MAE : 1.1657
+R²  : 0.8972
+
+模型已保存: predrnn_baseline_concat_Ls.pth
+
+[Analysis] Starting PFI for Concat Baseline...
+基准 RMSE: 1.9189
+特征 [Prev_O3] 置换后 RMSE: 5.5560, 增加量: 3.6371
+特征 [U_Wind] 置换后 RMSE: 2.5041, 增加量: 0.5852
+特征 [V_Wind] 置换后 RMSE: 2.3286, 增加量: 0.4097
+特征 [Temperature] 置换后 RMSE: 3.2053, 增加量: 1.2864
+特征 [Solar_Flux] 置换后 RMSE: 2.5927, 增加量: 0.6738
+特征 [Ls_Scalar_Map] 置换后 RMSE: 2.9539, 增加量: 1.0350
+✅ PFI 分析图表已保存为 PFI_Analysis_Concat_Ls.png

@@ -1,0 +1,67 @@
+🚀 Training Device: cuda
+
+[Step 1] Loading OpenMars Data (Global)...
+OpenMars 最终形状: (6480, 36, 72)
+
+[Step 2] Loading MCD Data (MY27 + MY28)...
+正在读取: MCD_MY27_Lat-90-90_real.nc
+正在读取: MCD_MY28_Lat-90-90_real.nc
+
+[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...
+
+[Step 3] Start Training...
+Epoch 1/10 | Train Loss: 0.0766 | Val Loss: 0.0552
+Validation loss decreased (inf --> 0.055219).  Saving model ...
+Epoch 2/10 | Train Loss: 0.0266 | Val Loss: 0.0346
+Validation loss decreased (0.055219 --> 0.034649).  Saving model ...
+Epoch 3/10 | Train Loss: 0.0180 | Val Loss: 0.0276
+Validation loss decreased (0.034649 --> 0.027563).  Saving model ...
+Epoch 4/10 | Train Loss: 0.0150 | Val Loss: 0.0239
+Validation loss decreased (0.027563 --> 0.023876).  Saving model ...
+Epoch 5/10 | Train Loss: 0.0122 | Val Loss: 0.0230
+Validation loss decreased (0.023876 --> 0.022991).  Saving model ...
+Epoch 6/10 | Train Loss: 0.0114 | Val Loss: 0.0217
+Validation loss decreased (0.022991 --> 0.021688).  Saving model ...
+Epoch 7/10 | Train Loss: 0.0105 | Val Loss: 0.0201
+Validation loss decreased (0.021688 --> 0.020112).  Saving model ...
+Epoch 8/10 | Train Loss: 0.0095 | Val Loss: 0.0199
+Validation loss decreased (0.020112 --> 0.019884).  Saving model ...
+Epoch 9/10 | Train Loss: 0.0092 | Val Loss: 0.0175
+Validation loss decreased (0.019884 --> 0.017474).  Saving model ...
+Epoch 10/10 | Train Loss: 0.0086 | Val Loss: 0.0173
+Validation loss decreased (0.017474 --> 0.017350).  Saving model ...
+🔄 Loading best model state from checkpoint...
+
+[Step 4] Evaluation...
+
+RMSE: 1.4283
+MAE : 0.8928
+R²  : 0.9430
+
+--- Advanced Metrics ---
+Filtered MAPE (>0.1): 37.05%
+SMAPE: 31.07%
+
+[Visualization] Batch plotting spatial modulation parameters...
+✅ 空间调制模块图 (O3) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_O3.png
+✅ 空间调制模块图 (U_Wind_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_U_Wind_Sin.png
+✅ 空间调制模块图 (U_Wind_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_U_Wind_Cos.png
+✅ 空间调制模块图 (V_Wind_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_V_Wind_Sin.png
+✅ 空间调制模块图 (V_Wind_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_V_Wind_Cos.png
+✅ 空间调制模块图 (Temperature_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Temperature_Sin.png
+✅ 空间调制模块图 (Temperature_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Temperature_Cos.png
+✅ 空间调制模块图 (Solar_Flux_Sin) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Solar_Flux_Sin.png
+✅ 空间调制模块图 (Solar_Flux_Cos) 已保存: D:\AAOzone\models\训练结果\Spatial_Modulation_Solar_Flux_Cos.png
+✅ 纬向误差分析图已保存: D:\AAOzone\models\训练结果\Zonal_Mean_Error.png
+高质量绘图失败: name 'min_val' is not defined
+
+模型已保存: predrnn_highlat_gpu_UVST.pth
+
+[Analysis] Starting PFI (Permutation Feature Importance)...
+基准 RMSE: 1.4283
+特征 [Prev_O3] 置换后 RMSE: 5.1939, 增加量: 3.7657
+特征 [U_Wind] 置换后 RMSE: 2.4831, 增加量: 1.0548
+特征 [V_Wind] 置换后 RMSE: 1.5443, 增加量: 0.1160
+特征 [Temperature] 置换后 RMSE: 2.3271, 增加量: 0.8988
+特征 [Solar_Flux] 置换后 RMSE: 2.1722, 增加量: 0.7439
+✅ PFI 分析图表已保存为 PFI_Analysis_Fixed.png

@@ -1,0 +1,99 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] Earthformer_Raw
+Earthformer_Raw | Epoch 1/20 | Train Loss: 0.0489 | Val Loss: 0.0398
+Validation loss decreased (inf --> 0.039778). Saving model ...
+Earthformer_Raw | Epoch 2/20 | Train Loss: 0.0329 | Val Loss: 0.0383
+Validation loss decreased (0.039778 --> 0.038275). Saving model ...
+Earthformer_Raw | Epoch 3/20 | Train Loss: 0.0317 | Val Loss: 0.0346
+Validation loss decreased (0.038275 --> 0.034556). Saving model ...
+Earthformer_Raw | Epoch 4/20 | Train Loss: 0.0311 | Val Loss: 0.0358
+EarlyStopping counter: 1 out of 5
+Earthformer_Raw | Epoch 5/20 | Train Loss: 0.0303 | Val Loss: 0.0342
+Validation loss decreased (0.034556 --> 0.034177). Saving model ...
+Earthformer_Raw | Epoch 6/20 | Train Loss: 0.0300 | Val Loss: 0.0332
+Validation loss decreased (0.034177 --> 0.033190). Saving model ...
+Earthformer_Raw | Epoch 7/20 | Train Loss: 0.0295 | Val Loss: 0.0345
+EarlyStopping counter: 1 out of 5
+Earthformer_Raw | Epoch 8/20 | Train Loss: 0.0293 | Val Loss: 0.0322
+Validation loss decreased (0.033190 --> 0.032166). Saving model ...
+Earthformer_Raw | Epoch 9/20 | Train Loss: 0.0291 | Val Loss: 0.0326
+EarlyStopping counter: 1 out of 5
+Earthformer_Raw | Epoch 10/20 | Train Loss: 0.0288 | Val Loss: 0.0329
+EarlyStopping counter: 2 out of 5
+Earthformer_Raw | Epoch 11/20 | Train Loss: 0.0286 | Val Loss: 0.0318
+Validation loss decreased (0.032166 --> 0.031843). Saving model ...
+Earthformer_Raw | Epoch 12/20 | Train Loss: 0.0284 | Val Loss: 0.0317
+Validation loss decreased (0.031843 --> 0.031717). Saving model ...
+Earthformer_Raw | Epoch 13/20 | Train Loss: 0.0282 | Val Loss: 0.0323
+EarlyStopping counter: 1 out of 5
+Earthformer_Raw | Epoch 14/20 | Train Loss: 0.0281 | Val Loss: 0.0317
+Validation loss decreased (0.031717 --> 0.031674). Saving model ...
+Earthformer_Raw | Epoch 15/20 | Train Loss: 0.0280 | Val Loss: 0.0321
+EarlyStopping counter: 1 out of 5
+Earthformer_Raw | Epoch 16/20 | Train Loss: 0.0279 | Val Loss: 0.0325
+EarlyStopping counter: 2 out of 5
+Earthformer_Raw | Epoch 17/20 | Train Loss: 0.0278 | Val Loss: 0.0313
+Validation loss decreased (0.031674 --> 0.031296). Saving model ...
+Earthformer_Raw | Epoch 18/20 | Train Loss: 0.0278 | Val Loss: 0.0319
+EarlyStopping counter: 1 out of 5
+Earthformer_Raw | Epoch 19/20 | Train Loss: 0.0276 | Val Loss: 0.0330
+EarlyStopping counter: 2 out of 5
+Earthformer_Raw | Epoch 20/20 | Train Loss: 0.0276 | Val Loss: 0.0312
+Validation loss decreased (0.031296 --> 0.031151). Saving model ...
+Earthformer_Raw weights saved to: D:\AAOzone\models\训练结果\earthformer_raw.pth
+Earthformer_Raw Metrics | RMSE: 1.9276 | MAE: 1.1500 | R^2: 0.8963 | SMAPE: 34.96%
+
+[Experiment] Earthformer_PhaseWarp
+Earthformer_PhaseWarp | Epoch 1/20 | Train Loss: 0.0439 | Val Loss: 0.0361
+Validation loss decreased (inf --> 0.036138). Saving model ...
+Earthformer_PhaseWarp | Epoch 2/20 | Train Loss: 0.0318 | Val Loss: 0.0347
+Validation loss decreased (0.036138 --> 0.034709). Saving model ...
+Earthformer_PhaseWarp | Epoch 3/20 | Train Loss: 0.0305 | Val Loss: 0.0319
+Validation loss decreased (0.034709 --> 0.031864). Saving model ...
+Earthformer_PhaseWarp | Epoch 4/20 | Train Loss: 0.0301 | Val Loss: 0.0309
+Validation loss decreased (0.031864 --> 0.030868). Saving model ...
+Earthformer_PhaseWarp | Epoch 5/20 | Train Loss: 0.0293 | Val Loss: 0.0310
+EarlyStopping counter: 1 out of 5
+Earthformer_PhaseWarp | Epoch 6/20 | Train Loss: 0.0293 | Val Loss: 0.0310
+EarlyStopping counter: 2 out of 5
+Earthformer_PhaseWarp | Epoch 7/20 | Train Loss: 0.0289 | Val Loss: 0.0315
+EarlyStopping counter: 3 out of 5
+Earthformer_PhaseWarp | Epoch 8/20 | Train Loss: 0.0286 | Val Loss: 0.0308
+Validation loss decreased (0.030868 --> 0.030808). Saving model ...
+Earthformer_PhaseWarp | Epoch 9/20 | Train Loss: 0.0285 | Val Loss: 0.0306
+Validation loss decreased (0.030808 --> 0.030555). Saving model ...
+Earthformer_PhaseWarp | Epoch 10/20 | Train Loss: 0.0283 | Val Loss: 0.0300
+Validation loss decreased (0.030555 --> 0.030007). Saving model ...
+Earthformer_PhaseWarp | Epoch 11/20 | Train Loss: 0.0280 | Val Loss: 0.0315
+EarlyStopping counter: 1 out of 5
+Earthformer_PhaseWarp | Epoch 12/20 | Train Loss: 0.0280 | Val Loss: 0.0299
+Validation loss decreased (0.030007 --> 0.029895). Saving model ...
+Earthformer_PhaseWarp | Epoch 13/20 | Train Loss: 0.0278 | Val Loss: 0.0317
+EarlyStopping counter: 1 out of 5
+Earthformer_PhaseWarp | Epoch 14/20 | Train Loss: 0.0278 | Val Loss: 0.0305
+EarlyStopping counter: 2 out of 5
+Earthformer_PhaseWarp | Epoch 15/20 | Train Loss: 0.0275 | Val Loss: 0.0300
+EarlyStopping counter: 3 out of 5
+Earthformer_PhaseWarp | Epoch 16/20 | Train Loss: 0.0275 | Val Loss: 0.0303
+EarlyStopping counter: 4 out of 5
+Earthformer_PhaseWarp | Epoch 17/20 | Train Loss: 0.0274 | Val Loss: 0.0302
+EarlyStopping counter: 5 out of 5
+Earthformer_PhaseWarp triggered early stopping.
+Earthformer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\earthformer_phasewarp.pth
+Earthformer_PhaseWarp Metrics | RMSE: 1.8818 | MAE: 1.1241 | R^2: 0.9011 | SMAPE: 33.63%
+
+[Comparison Summary]
+RMSE improvement: 0.0458
+MAE improvement : 0.0259
+R^2 gain        : 0.0049
+SMAPE gain      : 1.33%

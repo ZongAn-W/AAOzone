@@ -1,0 +1,93 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] TimeMixer_Raw
+TimeMixer_Raw | Epoch 1/20 | Train Loss: 0.1944 | Val Loss: 0.1600
+Validation loss decreased (inf --> 0.159992). Saving model ...
+TimeMixer_Raw | Epoch 2/20 | Train Loss: 0.1588 | Val Loss: 0.1449
+Validation loss decreased (0.159992 --> 0.144884). Saving model ...
+TimeMixer_Raw | Epoch 3/20 | Train Loss: 0.1480 | Val Loss: 0.1345
+Validation loss decreased (0.144884 --> 0.134500). Saving model ...
+TimeMixer_Raw | Epoch 4/20 | Train Loss: 0.1431 | Val Loss: 0.1261
+Validation loss decreased (0.134500 --> 0.126129). Saving model ...
+TimeMixer_Raw | Epoch 5/20 | Train Loss: 0.1402 | Val Loss: 0.1349
+EarlyStopping counter: 1 out of 5
+TimeMixer_Raw | Epoch 6/20 | Train Loss: 0.1381 | Val Loss: 0.1235
+Validation loss decreased (0.126129 --> 0.123545). Saving model ...
+TimeMixer_Raw | Epoch 7/20 | Train Loss: 0.1363 | Val Loss: 0.1269
+EarlyStopping counter: 1 out of 5
+TimeMixer_Raw | Epoch 8/20 | Train Loss: 0.1351 | Val Loss: 0.1235
+Validation loss decreased (0.123545 --> 0.123507). Saving model ...
+TimeMixer_Raw | Epoch 9/20 | Train Loss: 0.1339 | Val Loss: 0.1236
+EarlyStopping counter: 1 out of 5
+TimeMixer_Raw | Epoch 10/20 | Train Loss: 0.1330 | Val Loss: 0.1210
+Validation loss decreased (0.123507 --> 0.121023). Saving model ...
+TimeMixer_Raw | Epoch 11/20 | Train Loss: 0.1321 | Val Loss: 0.1234
+EarlyStopping counter: 1 out of 5
+TimeMixer_Raw | Epoch 12/20 | Train Loss: 0.1314 | Val Loss: 0.1226
+EarlyStopping counter: 2 out of 5
+TimeMixer_Raw | Epoch 13/20 | Train Loss: 0.1306 | Val Loss: 0.1235
+EarlyStopping counter: 3 out of 5
+TimeMixer_Raw | Epoch 14/20 | Train Loss: 0.1299 | Val Loss: 0.1221
+EarlyStopping counter: 4 out of 5
+TimeMixer_Raw | Epoch 15/20 | Train Loss: 0.1277 | Val Loss: 0.1180
+Validation loss decreased (0.121023 --> 0.118023). Saving model ...
+TimeMixer_Raw | Epoch 16/20 | Train Loss: 0.1252 | Val Loss: 0.1235
+EarlyStopping counter: 1 out of 5
+TimeMixer_Raw | Epoch 17/20 | Train Loss: 0.1237 | Val Loss: 0.1209
+EarlyStopping counter: 2 out of 5
+TimeMixer_Raw | Epoch 18/20 | Train Loss: 0.1226 | Val Loss: 0.1150
+Validation loss decreased (0.118023 --> 0.115035). Saving model ...
+TimeMixer_Raw | Epoch 19/20 | Train Loss: 0.1217 | Val Loss: 0.1190
+EarlyStopping counter: 1 out of 5
+TimeMixer_Raw | Epoch 20/20 | Train Loss: 0.1210 | Val Loss: 0.1173
+EarlyStopping counter: 2 out of 5
+TimeMixer_Raw weights saved to: D:\AAOzone\models\训练结果\timemixer_raw.pth
+TimeMixer_Raw Metrics | RMSE: 3.9161 | MAE: 2.6191 | R^2: 0.5718 | SMAPE: 69.80%
+
+[Experiment] TimeMixer_PhaseWarp
+TimeMixer_PhaseWarp | Epoch 1/20 | Train Loss: 0.2519 | Val Loss: 0.1461
+Validation loss decreased (inf --> 0.146057). Saving model ...
+TimeMixer_PhaseWarp | Epoch 2/20 | Train Loss: 0.1630 | Val Loss: 0.1168
+Validation loss decreased (0.146057 --> 0.116834). Saving model ...
+TimeMixer_PhaseWarp | Epoch 3/20 | Train Loss: 0.1420 | Val Loss: 0.1113
+Validation loss decreased (0.116834 --> 0.111330). Saving model ...
+TimeMixer_PhaseWarp | Epoch 4/20 | Train Loss: 0.1245 | Val Loss: 0.1131
+EarlyStopping counter: 1 out of 5
+TimeMixer_PhaseWarp | Epoch 5/20 | Train Loss: 0.1138 | Val Loss: 0.1130
+EarlyStopping counter: 2 out of 5
+TimeMixer_PhaseWarp | Epoch 6/20 | Train Loss: 0.1053 | Val Loss: 0.1027
+Validation loss decreased (0.111330 --> 0.102742). Saving model ...
+TimeMixer_PhaseWarp | Epoch 7/20 | Train Loss: 0.0996 | Val Loss: 0.0993
+Validation loss decreased (0.102742 --> 0.099264). Saving model ...
+TimeMixer_PhaseWarp | Epoch 8/20 | Train Loss: 0.0946 | Val Loss: 0.0963
+Validation loss decreased (0.099264 --> 0.096297). Saving model ...
+TimeMixer_PhaseWarp | Epoch 9/20 | Train Loss: 0.0915 | Val Loss: 0.0938
+Validation loss decreased (0.096297 --> 0.093772). Saving model ...
+TimeMixer_PhaseWarp | Epoch 10/20 | Train Loss: 0.0902 | Val Loss: 0.0961
+EarlyStopping counter: 1 out of 5
+TimeMixer_PhaseWarp | Epoch 11/20 | Train Loss: 0.0887 | Val Loss: 0.1043
+EarlyStopping counter: 2 out of 5
+TimeMixer_PhaseWarp | Epoch 12/20 | Train Loss: 0.0877 | Val Loss: 0.1073
+EarlyStopping counter: 3 out of 5
+TimeMixer_PhaseWarp | Epoch 13/20 | Train Loss: 0.0855 | Val Loss: 0.1035
+EarlyStopping counter: 4 out of 5
+TimeMixer_PhaseWarp | Epoch 14/20 | Train Loss: 0.0838 | Val Loss: 0.0976
+EarlyStopping counter: 5 out of 5
+TimeMixer_PhaseWarp triggered early stopping.
+TimeMixer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\timemixer_phasewarp.pth
+TimeMixer_PhaseWarp Metrics | RMSE: 3.4862 | MAE: 2.2390 | R^2: 0.6606 | SMAPE: 69.20%
+
+[Comparison Summary]
+RMSE improvement: 0.4299
+MAE improvement : 0.3802
+R^2 gain        : 0.0888
+SMAPE gain      : 0.60%

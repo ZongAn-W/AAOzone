@@ -1,0 +1,207 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] DLinear_Raw
+DLinear_Raw | Epoch 1/50 | Train Loss: 0.2424 | Val Loss: 0.1763
+Validation loss decreased (inf --> 0.176294). Saving model ...
+DLinear_Raw | Epoch 2/50 | Train Loss: 0.1576 | Val Loss: 0.1698
+Validation loss decreased (0.176294 --> 0.169767). Saving model ...
+DLinear_Raw | Epoch 3/50 | Train Loss: 0.1520 | Val Loss: 0.1659
+Validation loss decreased (0.169767 --> 0.165924). Saving model ...
+DLinear_Raw | Epoch 4/50 | Train Loss: 0.1479 | Val Loss: 0.1608
+Validation loss decreased (0.165924 --> 0.160836). Saving model ...
+DLinear_Raw | Epoch 5/50 | Train Loss: 0.1440 | Val Loss: 0.1558
+Validation loss decreased (0.160836 --> 0.155844). Saving model ...
+DLinear_Raw | Epoch 6/50 | Train Loss: 0.1411 | Val Loss: 0.1520
+Validation loss decreased (0.155844 --> 0.151994). Saving model ...
+DLinear_Raw | Epoch 7/50 | Train Loss: 0.1387 | Val Loss: 0.1482
+Validation loss decreased (0.151994 --> 0.148161). Saving model ...
+DLinear_Raw | Epoch 8/50 | Train Loss: 0.1365 | Val Loss: 0.1480
+Validation loss decreased (0.148161 --> 0.147977). Saving model ...
+DLinear_Raw | Epoch 9/50 | Train Loss: 0.1347 | Val Loss: 0.1437
+Validation loss decreased (0.147977 --> 0.143747). Saving model ...
+DLinear_Raw | Epoch 10/50 | Train Loss: 0.1333 | Val Loss: 0.1423
+Validation loss decreased (0.143747 --> 0.142326). Saving model ...
+DLinear_Raw | Epoch 11/50 | Train Loss: 0.1325 | Val Loss: 0.1425
+EarlyStopping counter: 1 out of 20
+DLinear_Raw | Epoch 12/50 | Train Loss: 0.1319 | Val Loss: 0.1425
+EarlyStopping counter: 2 out of 20
+DLinear_Raw | Epoch 13/50 | Train Loss: 0.1315 | Val Loss: 0.1416
+Validation loss decreased (0.142326 --> 0.141607). Saving model ...
+DLinear_Raw | Epoch 14/50 | Train Loss: 0.1309 | Val Loss: 0.1404
+Validation loss decreased (0.141607 --> 0.140352). Saving model ...
+DLinear_Raw | Epoch 15/50 | Train Loss: 0.1307 | Val Loss: 0.1399
+Validation loss decreased (0.140352 --> 0.139863). Saving model ...
+DLinear_Raw | Epoch 16/50 | Train Loss: 0.1305 | Val Loss: 0.1395
+Validation loss decreased (0.139863 --> 0.139488). Saving model ...
+DLinear_Raw | Epoch 17/50 | Train Loss: 0.1302 | Val Loss: 0.1433
+EarlyStopping counter: 1 out of 20
+DLinear_Raw | Epoch 18/50 | Train Loss: 0.1301 | Val Loss: 0.1382
+Validation loss decreased (0.139488 --> 0.138220). Saving model ...
+DLinear_Raw | Epoch 19/50 | Train Loss: 0.1300 | Val Loss: 0.1409
+EarlyStopping counter: 1 out of 20
+DLinear_Raw | Epoch 20/50 | Train Loss: 0.1299 | Val Loss: 0.1393
+EarlyStopping counter: 2 out of 20
+DLinear_Raw | Epoch 21/50 | Train Loss: 0.1296 | Val Loss: 0.1375
+Validation loss decreased (0.138220 --> 0.137465). Saving model ...
+DLinear_Raw | Epoch 22/50 | Train Loss: 0.1296 | Val Loss: 0.1382
+EarlyStopping counter: 1 out of 20
+DLinear_Raw | Epoch 23/50 | Train Loss: 0.1295 | Val Loss: 0.1416
+EarlyStopping counter: 2 out of 20
+DLinear_Raw | Epoch 24/50 | Train Loss: 0.1294 | Val Loss: 0.1386
+EarlyStopping counter: 3 out of 20
+DLinear_Raw | Epoch 25/50 | Train Loss: 0.1294 | Val Loss: 0.1390
+EarlyStopping counter: 4 out of 20
+DLinear_Raw | Epoch 26/50 | Train Loss: 0.1292 | Val Loss: 0.1393
+EarlyStopping counter: 5 out of 20
+DLinear_Raw | Epoch 27/50 | Train Loss: 0.1292 | Val Loss: 0.1403
+EarlyStopping counter: 6 out of 20
+DLinear_Raw | Epoch 28/50 | Train Loss: 0.1291 | Val Loss: 0.1439
+EarlyStopping counter: 7 out of 20
+DLinear_Raw | Epoch 29/50 | Train Loss: 0.1292 | Val Loss: 0.1377
+EarlyStopping counter: 8 out of 20
+DLinear_Raw | Epoch 30/50 | Train Loss: 0.1290 | Val Loss: 0.1393
+EarlyStopping counter: 9 out of 20
+DLinear_Raw | Epoch 31/50 | Train Loss: 0.1289 | Val Loss: 0.1378
+EarlyStopping counter: 10 out of 20
+DLinear_Raw | Epoch 32/50 | Train Loss: 0.1289 | Val Loss: 0.1395
+EarlyStopping counter: 11 out of 20
+DLinear_Raw | Epoch 33/50 | Train Loss: 0.1288 | Val Loss: 0.1392
+EarlyStopping counter: 12 out of 20
+DLinear_Raw | Epoch 34/50 | Train Loss: 0.1290 | Val Loss: 0.1380
+EarlyStopping counter: 13 out of 20
+DLinear_Raw | Epoch 35/50 | Train Loss: 0.1288 | Val Loss: 0.1388
+EarlyStopping counter: 14 out of 20
+DLinear_Raw | Epoch 36/50 | Train Loss: 0.1287 | Val Loss: 0.1372
+Validation loss decreased (0.137465 --> 0.137230). Saving model ...
+DLinear_Raw | Epoch 37/50 | Train Loss: 0.1289 | Val Loss: 0.1375
+EarlyStopping counter: 1 out of 20
+DLinear_Raw | Epoch 38/50 | Train Loss: 0.1288 | Val Loss: 0.1366
+Validation loss decreased (0.137230 --> 0.136626). Saving model ...
+DLinear_Raw | Epoch 39/50 | Train Loss: 0.1287 | Val Loss: 0.1362
+Validation loss decreased (0.136626 --> 0.136227). Saving model ...
+DLinear_Raw | Epoch 40/50 | Train Loss: 0.1285 | Val Loss: 0.1387
+EarlyStopping counter: 1 out of 20
+DLinear_Raw | Epoch 41/50 | Train Loss: 0.1285 | Val Loss: 0.1399
+EarlyStopping counter: 2 out of 20
+DLinear_Raw | Epoch 42/50 | Train Loss: 0.1287 | Val Loss: 0.1396
+EarlyStopping counter: 3 out of 20
+DLinear_Raw | Epoch 43/50 | Train Loss: 0.1286 | Val Loss: 0.1374
+EarlyStopping counter: 4 out of 20
+DLinear_Raw | Epoch 44/50 | Train Loss: 0.1285 | Val Loss: 0.1378
+EarlyStopping counter: 5 out of 20
+DLinear_Raw | Epoch 45/50 | Train Loss: 0.1286 | Val Loss: 0.1390
+EarlyStopping counter: 6 out of 20
+DLinear_Raw | Epoch 46/50 | Train Loss: 0.1285 | Val Loss: 0.1385
+EarlyStopping counter: 7 out of 20
+DLinear_Raw | Epoch 47/50 | Train Loss: 0.1285 | Val Loss: 0.1377
+EarlyStopping counter: 8 out of 20
+DLinear_Raw | Epoch 48/50 | Train Loss: 0.1285 | Val Loss: 0.1380
+EarlyStopping counter: 9 out of 20
+DLinear_Raw | Epoch 49/50 | Train Loss: 0.1285 | Val Loss: 0.1376
+EarlyStopping counter: 10 out of 20
+DLinear_Raw | Epoch 50/50 | Train Loss: 0.1285 | Val Loss: 0.1389
+EarlyStopping counter: 11 out of 20
+DLinear_Raw weights saved to: D:\AAOzone\models\训练结果\dlinear_raw.pth
+DLinear_Raw Metrics | RMSE: 4.2104 | MAE: 2.8001 | R^2: 0.5050 | SMAPE: 70.25%
+
+[Experiment] DLinear_PhaseWarp
+DLinear_PhaseWarp | Epoch 1/50 | Train Loss: 0.1906 | Val Loss: 0.1331
+Validation loss decreased (inf --> 0.133069). Saving model ...
+DLinear_PhaseWarp | Epoch 2/50 | Train Loss: 0.1364 | Val Loss: 0.1278
+Validation loss decreased (0.133069 --> 0.127847). Saving model ...
+DLinear_PhaseWarp | Epoch 3/50 | Train Loss: 0.1265 | Val Loss: 0.1183
+Validation loss decreased (0.127847 --> 0.118320). Saving model ...
+DLinear_PhaseWarp | Epoch 4/50 | Train Loss: 0.1180 | Val Loss: 0.1154
+Validation loss decreased (0.118320 --> 0.115442). Saving model ...
+DLinear_PhaseWarp | Epoch 5/50 | Train Loss: 0.1145 | Val Loss: 0.1124
+Validation loss decreased (0.115442 --> 0.112439). Saving model ...
+DLinear_PhaseWarp | Epoch 6/50 | Train Loss: 0.1127 | Val Loss: 0.1208
+EarlyStopping counter: 1 out of 20
+DLinear_PhaseWarp | Epoch 7/50 | Train Loss: 0.1114 | Val Loss: 0.1114
+Validation loss decreased (0.112439 --> 0.111424). Saving model ...
+DLinear_PhaseWarp | Epoch 8/50 | Train Loss: 0.1105 | Val Loss: 0.1128
+EarlyStopping counter: 1 out of 20
+DLinear_PhaseWarp | Epoch 9/50 | Train Loss: 0.1099 | Val Loss: 0.1127
+EarlyStopping counter: 2 out of 20
+DLinear_PhaseWarp | Epoch 10/50 | Train Loss: 0.1091 | Val Loss: 0.1155
+EarlyStopping counter: 3 out of 20
+DLinear_PhaseWarp | Epoch 11/50 | Train Loss: 0.1085 | Val Loss: 0.1128
+EarlyStopping counter: 4 out of 20
+DLinear_PhaseWarp | Epoch 12/50 | Train Loss: 0.1082 | Val Loss: 0.1141
+EarlyStopping counter: 5 out of 20
+DLinear_PhaseWarp | Epoch 13/50 | Train Loss: 0.1078 | Val Loss: 0.1150
+EarlyStopping counter: 6 out of 20
+DLinear_PhaseWarp | Epoch 14/50 | Train Loss: 0.1075 | Val Loss: 0.1158
+EarlyStopping counter: 7 out of 20
+DLinear_PhaseWarp | Epoch 15/50 | Train Loss: 0.1072 | Val Loss: 0.1146
+EarlyStopping counter: 8 out of 20
+DLinear_PhaseWarp | Epoch 16/50 | Train Loss: 0.1069 | Val Loss: 0.1103
+Validation loss decreased (0.111424 --> 0.110253). Saving model ...
+DLinear_PhaseWarp | Epoch 17/50 | Train Loss: 0.1068 | Val Loss: 0.1113
+EarlyStopping counter: 1 out of 20
+DLinear_PhaseWarp | Epoch 18/50 | Train Loss: 0.1064 | Val Loss: 0.1140
+EarlyStopping counter: 2 out of 20
+DLinear_PhaseWarp | Epoch 19/50 | Train Loss: 0.1057 | Val Loss: 0.1086
+Validation loss decreased (0.110253 --> 0.108592). Saving model ...
+DLinear_PhaseWarp | Epoch 20/50 | Train Loss: 0.1055 | Val Loss: 0.1080
+Validation loss decreased (0.108592 --> 0.108013). Saving model ...
+DLinear_PhaseWarp | Epoch 21/50 | Train Loss: 0.1053 | Val Loss: 0.1060
+Validation loss decreased (0.108013 --> 0.105956). Saving model ...
+DLinear_PhaseWarp | Epoch 22/50 | Train Loss: 0.1049 | Val Loss: 0.1080
+EarlyStopping counter: 1 out of 20
+DLinear_PhaseWarp | Epoch 23/50 | Train Loss: 0.1048 | Val Loss: 0.1074
+EarlyStopping counter: 2 out of 20
+DLinear_PhaseWarp | Epoch 24/50 | Train Loss: 0.1046 | Val Loss: 0.1076
+EarlyStopping counter: 3 out of 20
+DLinear_PhaseWarp | Epoch 25/50 | Train Loss: 0.1042 | Val Loss: 0.1072
+EarlyStopping counter: 4 out of 20
+DLinear_PhaseWarp | Epoch 26/50 | Train Loss: 0.1041 | Val Loss: 0.1088
+EarlyStopping counter: 5 out of 20
+DLinear_PhaseWarp | Epoch 27/50 | Train Loss: 0.1038 | Val Loss: 0.1096
+EarlyStopping counter: 6 out of 20
+DLinear_PhaseWarp | Epoch 28/50 | Train Loss: 0.1037 | Val Loss: 0.1081
+EarlyStopping counter: 7 out of 20
+DLinear_PhaseWarp | Epoch 29/50 | Train Loss: 0.1035 | Val Loss: 0.1080
+EarlyStopping counter: 8 out of 20
+DLinear_PhaseWarp | Epoch 30/50 | Train Loss: 0.1033 | Val Loss: 0.1081
+EarlyStopping counter: 9 out of 20
+DLinear_PhaseWarp | Epoch 31/50 | Train Loss: 0.1031 | Val Loss: 0.1069
+EarlyStopping counter: 10 out of 20
+DLinear_PhaseWarp | Epoch 32/50 | Train Loss: 0.1031 | Val Loss: 0.1090
+EarlyStopping counter: 11 out of 20
+DLinear_PhaseWarp | Epoch 33/50 | Train Loss: 0.1028 | Val Loss: 0.1082
+EarlyStopping counter: 12 out of 20
+DLinear_PhaseWarp | Epoch 34/50 | Train Loss: 0.1027 | Val Loss: 0.1082
+EarlyStopping counter: 13 out of 20
+DLinear_PhaseWarp | Epoch 35/50 | Train Loss: 0.1027 | Val Loss: 0.1097
+EarlyStopping counter: 14 out of 20
+DLinear_PhaseWarp | Epoch 36/50 | Train Loss: 0.1025 | Val Loss: 0.1090
+EarlyStopping counter: 15 out of 20
+DLinear_PhaseWarp | Epoch 37/50 | Train Loss: 0.1023 | Val Loss: 0.1082
+EarlyStopping counter: 16 out of 20
+DLinear_PhaseWarp | Epoch 38/50 | Train Loss: 0.1021 | Val Loss: 0.1087
+EarlyStopping counter: 17 out of 20
+DLinear_PhaseWarp | Epoch 39/50 | Train Loss: 0.1021 | Val Loss: 0.1095
+EarlyStopping counter: 18 out of 20
+DLinear_PhaseWarp | Epoch 40/50 | Train Loss: 0.1019 | Val Loss: 0.1082
+EarlyStopping counter: 19 out of 20
+DLinear_PhaseWarp | Epoch 41/50 | Train Loss: 0.1018 | Val Loss: 0.1103
+EarlyStopping counter: 20 out of 20
+DLinear_PhaseWarp triggered early stopping.
+DLinear_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\dlinear_phasewarp.pth
+DLinear_PhaseWarp Metrics | RMSE: 3.7157 | MAE: 2.5029 | R^2: 0.6145 | SMAPE: 78.27%
+
+[Comparison Summary]
+RMSE improvement: 0.4947
+MAE improvement : 0.2973
+R^2 gain        : 0.1095
+SMAPE gain      : -8.01%

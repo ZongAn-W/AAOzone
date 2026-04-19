@@ -1,0 +1,43 @@
+🚀 Training Device: cuda
+
+[Step 1] Loading OpenMars Data (Global)...
+OpenMars 最终形状: (6480, 36, 72)
+
+[Step 2] Loading MCD Data (MY27 + MY28)...
+正在读取: MCD_MY27_Lat-90-90_real.nc
+正在读取: MCD_MY28_Lat-90-90_real.nc
+
+[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...
+
+[Step 3] Start Training...
+Epoch 1/10 Loss=0.1168
+Epoch 2/10 Loss=0.0394
+Epoch 3/10 Loss=0.0264
+Epoch 4/10 Loss=0.0205
+Epoch 5/10 Loss=0.0172
+Epoch 6/10 Loss=0.0151
+Epoch 7/10 Loss=0.0139
+Epoch 8/10 Loss=0.0126
+Epoch 9/10 Loss=0.0122
+Epoch 10/10 Loss=0.0111
+
+[Step 4] Evaluation...
+
+RMSE: 1.9224
+MAE : 1.1780
+R²  : 0.8968
+
+--- Advanced Metrics ---
+Filtered MAPE (>0.1): 49.74%
+SMAPE: 34.86%
+
+模型已保存: predrnn_highlat_gpu_UVST.pth
+
+[Analysis] Starting PFI (Permutation Feature Importance)...
+基准 RMSE: 1.9224
+特征 [Prev_O3] 置换后 RMSE: 4.4787, 增加量: 2.5563
+特征 [U_Wind] 置换后 RMSE: 3.6044, 增加量: 1.6820
+特征 [V_Wind] 置换后 RMSE: 2.2983, 增加量: 0.3759
+特征 [Temperature] 置换后 RMSE: 4.0131, 增加量: 2.0907
+特征 [Solar_Flux] 置换后 RMSE: 3.5840, 增加量: 1.6616
+✅ PFI 分析图表已保存为 PFI_Analysis_Fixed.png

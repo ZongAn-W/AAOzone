@@ -21,7 +21,7 @@ base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 
 # ========================================
-# 自动日志记录配置
+# 自动日志记录配置 ( Baseline 2 版本 )
 # ========================================
 class Logger(object):
     def __init__(self, filename="Default.log"):
@@ -38,13 +38,13 @@ class Logger(object):
 
 os.makedirs(os.path.join(base_dir, "models", "训练过程"), exist_ok=True)
 os.makedirs(os.path.join(base_dir, "models", "训练结果"), exist_ok=True)
-sys.stdout = Logger(os.path.join(base_dir, "models", "训练过程", "UVST.txt"))
+sys.stdout = Logger(os.path.join(base_dir, "models", "训练过程", "Baseline_Concat_Ls.txt"))
 
 # ========================================
 # 0. 基础配置
 # ========================================
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"🚀 Training Device: {device}")
+print(f"🚀 Training Device: {device} [MODE: BASELINE WITH CONCAT Ls]")
 
 openmars_dir = os.path.join(base_dir, "Dataset", "OpenMars")
 mcd_dir = os.path.join(base_dir, "Dataset", "MCDALL")
@@ -54,22 +54,17 @@ batch_size = 16
 epochs = 10
 
 # ========================================
-# 1. OpenMars 读取 (目标: 全球全经纬度数据)
+# 1-4. 数据读取与时间对齐 (与原版一致)
 # ========================================
-print("\n[Step 1] Loading OpenMars Data (Global)...")
+print("\n[Step 1 & 2] Loading OpenMars and MCD Data...")
 
-o3_list = []
-om_ls_list = []
+o3_list, om_ls_list = [], []
 
 
-def natural_sort_key(s):
-    return [int(text) if text.isdigit() else text.lower() for text in re.split('([0-9]+)', s)]
+def natural_sort_key(s): return [int(text) if text.isdigit() else text.lower() for text in re.split('([0-9]+)', s)]
 
 
 file_list = sorted(glob.glob(os.path.join(openmars_dir, "*.nc")), key=natural_sort_key)
-if not file_list:
-    raise FileNotFoundError("❌ 未找到 OpenMars 文件，请检查路径！")
-
 ref_ds = nc.Dataset(file_list[0])
 om_lats = ref_ds.variables['lat'][:] if 'lat' in ref_ds.variables else ref_ds.variables['latitude'][:]
 om_lons = ref_ds.variables['lon'][:] if 'lon' in ref_ds.variables else ref_ds.variables['longitude'][:]
@@ -78,34 +73,18 @@ ref_ds.close()
 for f in file_list:
     ds = nc.Dataset(f)
     o3_list.append(ds.variables['o3col'][:])
-
-    if 'Ls' in ds.variables:
-        om_ls_list.append(ds.variables['Ls'][:])
-    elif 'ls' in ds.variables:
-        om_ls_list.append(ds.variables['ls'][:])
-    else:
-        raise ValueError(f"OpenMars 文件 {f} 中未找到 Ls 变量！")
+    om_ls_list.append(ds.variables['Ls'][:] if 'Ls' in ds.variables else ds.variables['ls'][:])
     ds.close()
 
 o3col = np.concatenate(o3_list, axis=0)
 om_ls_raw = np.concatenate(om_ls_list, axis=0)
-print(f"OpenMars 最终形状: {o3col.shape}")
-
-# ========================================
-# 2. MCD 读取 (MY27 + MY28 双文件)
-# ========================================
-print("\n[Step 2] Loading MCD Data (MY27 + MY28)...")
 
 mcd_vars = ['U_Wind', 'V_Wind', 'Temperature', 'Solar_Flux_DN']
 short_names = ['u', 'v', 'temp', 'fluxsurf_dn_sw']
-
 mcd_data_list = {k: [] for k in short_names}
 mcd_ls_list = []
-
-target_files = [
-    os.path.join(mcd_dir, "MCD_MY27_Lat-90-90_real.nc"),
-    os.path.join(mcd_dir, "MCD_MY28_Lat-90-90_real.nc")
-]
+target_files = [os.path.join(mcd_dir, "MCD_MY27_Lat-90-90_real.nc"),
+                os.path.join(mcd_dir, "MCD_MY28_Lat-90-90_real.nc")]
 
 
 def merge_sol_hour(x):
@@ -115,19 +94,10 @@ def merge_sol_hour(x):
 
 for f_path in target_files:
     if not os.path.exists(f_path): continue
-    print(f"正在读取: {os.path.basename(f_path)}")
     ds = nc.Dataset(f_path)
-
-    mcd_data_list['u'].append(merge_sol_hour(ds.variables['U_Wind'][:]))
-    mcd_data_list['v'].append(merge_sol_hour(ds.variables['V_Wind'][:]))
-    mcd_data_list['temp'].append(merge_sol_hour(ds.variables['Temperature'][:]))
-    mcd_data_list['fluxsurf_dn_sw'].append(merge_sol_hour(ds.variables['Solar_Flux_DN'][:]))
-
-    if 'Ls' in ds.variables:
-        ls_tmp = ds.variables['Ls'][:]
-    else:
-        ls_tmp = ds.variables['ls'][:]
-
+    for k, var in zip(short_names, mcd_vars):
+        mcd_data_list[k].append(merge_sol_hour(ds.variables[var][:]))
+    ls_tmp = ds.variables['Ls'][:] if 'Ls' in ds.variables else ds.variables['ls'][:]
     u_shape = ds.variables['U_Wind'].shape
     S_dim, H_dim = u_shape[0], u_shape[1]
 
@@ -147,58 +117,44 @@ for f_path in target_files:
         mcd_ls_list.append(ls_tmp.flatten())
     ds.close()
 
-vars_dict = {}
-for k in short_names:
-    vars_dict[k] = np.concatenate(mcd_data_list[k], axis=0)
-
+vars_dict = {k: np.concatenate(mcd_data_list[k], axis=0) for k in short_names}
 mcd_ls_raw = np.concatenate(mcd_ls_list, axis=0)
 
 
-def clean_invalid(x, name):
+def clean_invalid(x):
     x = np.array(x, dtype=np.float32)
     bad = ~np.isfinite(x) | (np.abs(x) > 1e10)
-    if np.any(bad):
-        print(f"⚠️ {name}: cleaned {bad.sum()} invalid values")
-        x[bad] = np.nan
+    if np.any(bad): x[bad] = np.nan
     return np.nan_to_num(x, nan=0.0)
 
 
-y_raw = clean_invalid(o3col, "OpenMars O3")
+y_raw = clean_invalid(o3col)
 for k in vars_dict:
-    vars_dict[k] = clean_invalid(vars_dict[k], k)
-
-if 'dustq' in vars_dict:
-    vars_dict['dustq'][vars_dict['dustq'] < 0] = 0.0
-
+    vars_dict[k] = clean_invalid(vars_dict[k])
 if 'fluxsurf_dn_sw' in vars_dict:
     vars_dict['fluxsurf_dn_sw'] /= (np.max(vars_dict['fluxsurf_dn_sw']) + 1e-6)
 
-# ========================================
-# 4. 时间对齐
-# ========================================
-print("\n[Step 4] Time Alignment (Interpolating MCD to OpenMars based on Ls)...")
+print("\n[Step 4] Time Alignment...")
 
 
 def unwrap_ls(ls_array):
     ls_unwrapped = np.copy(ls_array)
     year_offset = 0
     for i in range(1, len(ls_unwrapped)):
-        if ls_array[i] < ls_array[i - 1] - 180:
-            year_offset += 360
+        if ls_array[i] < ls_array[i - 1] - 180: year_offset += 360
         ls_unwrapped[i] += year_offset
     return ls_unwrapped
 
 
 om_ls_continuous = unwrap_ls(om_ls_raw)
 mcd_ls_continuous = unwrap_ls(mcd_ls_raw)
-
 for k in vars_dict:
     interpolator = interp1d(mcd_ls_continuous, vars_dict[k], axis=0, kind='linear', bounds_error=False,
                             fill_value="extrapolate")
     vars_dict[k] = interpolator(om_ls_continuous)
 
 # ========================================
-# 5. 构建数据集 (无泄露版)
+# 5. 构建数据集 (保留 Ls 用于拼接)
 # ========================================
 X_raw = np.stack([y_raw, vars_dict['u'], vars_dict['v'], vars_dict['temp'], vars_dict['fluxsurf_dn_sw']], axis=-1)
 T, H, W, C = X_raw.shape
@@ -213,8 +169,7 @@ for c in range(C):
     scaler.fit(X_train_raw[..., c].reshape(split_time_idx, -1))
     X_scaled[..., c] = scaler.transform(X_raw[..., c].reshape(T, -1)).reshape(T, H, W)
 
-y_mean = y_train_raw.mean()
-y_std = y_train_raw.std()
+y_mean, y_std = y_train_raw.mean(), y_train_raw.std()
 y_scaled = (y_raw - y_mean) / y_std
 
 X_seq, y_seq, ls_seq = [], [], []
@@ -236,7 +191,7 @@ test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 
 # ========================================
-# 6. 模型定义 (PredRNNv2 修复版)
+# 6. 模型定义 ( 拼接 Ls 的 Baseline )
 # ========================================
 class SpatioTemporalLSTMCellv2(nn.Module):
     def __init__(self, in_channel, num_hidden, height, width, filter_size):
@@ -273,60 +228,27 @@ class SpatioTemporalLSTMCellv2(nn.Module):
         return h_new, c_new, m_new
 
 
-class PredRNNv2(nn.Module):
-    # input_dim=9: O3(1) + U_sin(1) + U_cos(1) + V_sin(1) + V_cos(1) + T_sin(1) + T_cos(1) + F_sin(1) + F_cos(1)
-    def __init__(self, input_dim=9, hidden_dims=[64, 64, 64], height=H, width=W, horizon=horizon):
+class PredRNNv2_Concat(nn.Module):
+    # 输入通道 = 6 ( O3 + U + V + Temp + Flux + Ls标量图 )
+    def __init__(self, input_dim=6, hidden_dims=[64, 64, 64], height=H, width=W, horizon=horizon):
         super().__init__()
-
-        self.w1_u = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.w2_u = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.b1_u = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-        self.b2_u = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-
-        self.w1_v = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.w2_v = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.b1_v = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-        self.b2_v = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-
-        self.w1_t = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.w2_t = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.b1_t = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-        self.b2_t = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-
-        self.w1_f = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.w2_f = nn.Parameter(torch.ones(1, 1, 1, height, width))
-        self.b1_f = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-        self.b2_f = nn.Parameter(torch.zeros(1, 1, 1, height, width))
-
         self.layers = nn.ModuleList()
         for i in range(len(hidden_dims)):
             in_ch = input_dim if i == 0 else hidden_dims[i - 1]
             self.layers.append(SpatioTemporalLSTMCellv2(in_ch, hidden_dims[i], height, width, 3))
-
         self.conv_last = nn.Conv2d(hidden_dims[-1], 1, 1)
         self.horizon = horizon
         self.hidden_dims = hidden_dims
 
     def forward(self, x, ls):
         B, T_dim, C, H_dim, W_dim = x.shape
-        ls_rad = (ls * (torch.pi / 180.0)).view(B, T_dim, 1, 1, 1)
 
-        o3 = x[:, :, 0:1, :, :]
-        u = x[:, :, 1:2, :, :]
-        v = x[:, :, 2:3, :, :]
-        temp = x[:, :, 3:4, :, :]
-        flux = x[:, :, 4:5, :, :]
+        # 传统特征工程：将 Ls 归一化到 [0, 1] 区间，并扩展为与图像尺寸一致的通道
+        ls_norm = (ls % 360.0) / 360.0
+        ls_map = ls_norm.view(B, T_dim, 1, 1, 1).expand(-1, -1, -1, H_dim, W_dim)
 
-        u_sin = u * (self.w1_u * torch.sin(ls_rad + self.b1_u))
-        u_cos = u * (self.w2_u * torch.cos(ls_rad + self.b2_u))
-        v_sin = v * (self.w1_v * torch.sin(ls_rad + self.b1_v))
-        v_cos = v * (self.w2_v * torch.cos(ls_rad + self.b2_v))
-        t_sin = temp * (self.w1_t * torch.sin(ls_rad + self.b1_t))
-        t_cos = temp * (self.w2_t * torch.cos(ls_rad + self.b2_t))
-        f_sin = flux * (self.w1_f * torch.sin(ls_rad + self.b1_f))
-        f_cos = flux * (self.w2_f * torch.cos(ls_rad + self.b2_f))
-
-        x_new = torch.cat([o3, u_sin, u_cos, v_sin, v_cos, t_sin, t_cos, f_sin, f_cos], dim=2)
+        # 直接在 Channel 维度拼接 (通道从5变成6)
+        x_new = torch.cat([x, ls_map], dim=2)
 
         h = [torch.zeros(B, d, H_dim, W_dim, device=x.device) for d in self.hidden_dims]
         c = [torch.zeros_like(h[i]) for i in range(len(h))]
@@ -339,20 +261,20 @@ class PredRNNv2(nn.Module):
                 h[i], c[i], m = cell(inp, h[i], c[i], m)
                 inp = h[i]
 
-        # Decoder (修复版：自回归预测)
+        # Decoder
         preds = []
-        last_meteo = x_new[:, -1, 1:, :, :]  # 提取历史最后时刻的气象环境 (8通道)
+        last_meteo = x_new[:, -1, 1:, :, :]  # 提取历史最后时刻的气象环境 + Ls通道 (共5通道)
         current_o3 = x_new[:, -1, 0:1, :, :]  # 提取历史最后时刻的 O3 (1通道)
 
         for _ in range(self.horizon):
-            inp = torch.cat([current_o3, last_meteo], dim=1)  # 重新拼接成 9 通道
+            inp = torch.cat([current_o3, last_meteo], dim=1)  # 重新拼成6通道输入
             for i, cell in enumerate(self.layers):
                 h[i], c[i], m = cell(inp, h[i], c[i], m)
                 inp = h[i]
 
             pred_o3 = self.conv_last(h[-1])
             preds.append(pred_o3)
-            current_o3 = pred_o3  # 用最新的预测结果作为下一步的输入 (滚动)
+            current_o3 = pred_o3
 
         return torch.stack(preds, dim=1)
 
@@ -360,11 +282,11 @@ class PredRNNv2(nn.Module):
 # ========================================
 # 7. 训练循环
 # ========================================
-model = PredRNNv2(height=H, width=W).to(device)
+model = PredRNNv2_Concat(height=H, width=W).to(device)
 opt = torch.optim.Adam(model.parameters(), lr=1e-4)
 criterion = nn.SmoothL1Loss()
 
-print("\n[Step 3] Start Training...")
+print("\n[Step 3] Start Training Baseline (Concat Ls)...")
 for ep in range(epochs):
     model.train()
     loss_sum = 0
@@ -405,49 +327,26 @@ mse = np.mean((pred_flat - true_flat) ** 2)
 rmse = np.sqrt(mse)
 mae = np.mean(np.abs(pred_flat - true_flat))
 
+# --- 新增的 R² 计算部分 ---
 ss_res = np.sum((true_flat - pred_flat) ** 2)
 ss_tot = np.sum((true_flat - np.mean(true_flat)) ** 2)
 r2 = 1 - ss_res / ss_tot
 
 print(f"\nRMSE: {rmse:.4f}")
 print(f"MAE : {mae:.4f}")
-print(f"R²  : {r2:.4f}")
-
-print("\n--- Advanced Metrics ---")
-threshold = 0.1
-mask = true_flat > threshold
-if np.sum(mask) > 0:
-    mape_filtered = np.mean(np.abs((true_flat[mask] - pred_flat[mask]) / true_flat[mask]))
-    print(f"Filtered MAPE (>{threshold}): {mape_filtered:.2%}")
-
-smape = np.mean(2.0 * np.abs(pred_flat - true_flat) / (np.abs(true_flat) + np.abs(pred_flat) + 1e-6))
-print(f"SMAPE: {smape:.2%}")
+print(f"R²  : {r2:.4f}")  # 打印 R²
 
 # ========================================
-# 9. 可视化与保存
+# 9. 保存模型
 # ========================================
-try:
-    plt.figure(figsize=(10, 4))
-    plt.subplot(1, 2, 1)
-    plt.title("True O3 Sample")
-    plt.imshow(trues[0, 0, 0], cmap='viridis')
-    plt.colorbar()
-
-    plt.subplot(1, 2, 2)
-    plt.title("Pred O3 Sample")
-    plt.imshow(preds[0, 0, 0], cmap='viridis')
-    plt.colorbar()
-    plt.show()
-except:
-    pass
-
-torch.save(model.state_dict(), os.path.join(base_dir, "models", "训练结果", "predrnn_highlat_gpu_UVST.pth"))
-print("\n模型已保存: predrnn_highlat_gpu_UVST.pth")
+save_path = os.path.join(base_dir, "models", "训练结果", "predrnn_baseline_concat_Ls.pth")
+torch.save(model.state_dict(), save_path)
+print(f"\n模型已保存: {os.path.basename(save_path)}")
 
 # ========================================
-# 10. PFI (Permutation Feature Importance) 分析
+# 10. PFI (新增了 Ls_Scalar 的置换测试)
 # ========================================
-print("\n[Analysis] Starting PFI (Permutation Feature Importance)...")
+print("\n[Analysis] Starting PFI for Concat Baseline...")
 
 
 def evaluate_rmse(model, loader, device, y_std, y_mean):
@@ -459,7 +358,6 @@ def evaluate_rmse(model, loader, device, y_std, y_mean):
             pred = model(xb, lsb).cpu().numpy()
             all_preds.append(pred)
             all_trues.append(yb.numpy())
-
     preds = np.concatenate(all_preds, axis=0) * y_std + y_mean
     trues = np.concatenate(all_trues, axis=0) * y_std + y_mean
     return np.sqrt(mean_squared_error(trues.flatten(), preds.flatten()))
@@ -468,19 +366,21 @@ def evaluate_rmse(model, loader, device, y_std, y_mean):
 baseline_rmse = evaluate_rmse(model, test_loader, device, y_std, y_mean)
 print(f"基准 RMSE: {baseline_rmse:.4f}")
 
-# 对应 DataLoader 里的 5 个物理特征维度：O3, U, V, Temp, Flux
-feature_names = ['Prev_O3', 'U_Wind', 'V_Wind', 'Temperature', 'Solar_Flux']
+# 现在有 6 个特征参与分析
+feature_names = ['Prev_O3', 'U_Wind', 'V_Wind', 'Temperature', 'Solar_Flux', 'Ls_Scalar_Map']
 pfi_scores = []
 
 for i, col_name in enumerate(feature_names):
-    # 获取原始测试集 tensor
     X_test_tensor = test_dataset.tensors[0].clone()
-    ls_test_tensor = test_dataset.tensors[1]
+    ls_test_tensor = test_dataset.tensors[1].clone()
     y_test_tensor = test_dataset.tensors[2]
 
-    # 沿着样本维度 (Batch) 打乱第 i 个特征
     perm_idx = torch.randperm(X_test_tensor.size(0))
-    X_test_tensor[:, :, i, :, :] = X_test_tensor[perm_idx, :, i, :, :]
+
+    if i < 5:  # 置换前 5 个气象/臭氧通道
+        X_test_tensor[:, :, i, :, :] = X_test_tensor[perm_idx, :, i, :, :]
+    else:  # 专门置换独立输入的 Ls
+        ls_test_tensor[:, :] = ls_test_tensor[perm_idx, :]
 
     temp_dataset = TensorDataset(X_test_tensor, ls_test_tensor, y_test_tensor)
     temp_loader = DataLoader(temp_dataset, batch_size=batch_size, shuffle=False)
@@ -488,18 +388,17 @@ for i, col_name in enumerate(feature_names):
     permuted_rmse = evaluate_rmse(model, temp_loader, device, y_std, y_mean)
     importance = permuted_rmse - baseline_rmse
     pfi_scores.append(importance)
-
     print(f"特征 [{col_name}] 置换后 RMSE: {permuted_rmse:.4f}, 增加量: {importance:.4f}")
 
 try:
     plt.figure(figsize=(10, 6))
-    sns.barplot(x=pfi_scores, y=feature_names, palette="viridis")
-    plt.title("Permutation Feature Importance (PFI)")
+    sns.barplot(x=pfi_scores, y=feature_names, palette="Oranges_r")
+    plt.title("Permutation Feature Importance (Baseline WITH CONCAT Ls)")
     plt.xlabel("Increase in RMSE (Lower is more important)")
     plt.grid(axis='x', linestyle='--', alpha=0.7)
     plt.tight_layout()
-    plt.savefig(os.path.join(base_dir, "models", "训练结果", "PFI_Analysis_Fixed.png"))
-    print("✅ PFI 分析图表已保存为 PFI_Analysis_Fixed.png")
+    plt.savefig(os.path.join(base_dir, "models", "训练结果", "PFI_Analysis_Concat_Ls.png"))
+    print("✅ PFI 分析图表已保存为 PFI_Analysis_Concat_Ls.png")
     plt.show()
 except Exception as e:
-    print(f"PFI 绘图失败: {e}")
+    pass
