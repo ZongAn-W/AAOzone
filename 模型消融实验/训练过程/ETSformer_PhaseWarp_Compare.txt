@@ -1,0 +1,81 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] ETSformer_Raw
+ETSformer_Raw | Epoch 1/15 | Train Loss: 0.2268 | Val Loss: 0.1621
+Validation loss decreased (inf --> 0.162068). Saving model ...
+ETSformer_Raw | Epoch 2/15 | Train Loss: 0.1558 | Val Loss: 0.1532
+Validation loss decreased (0.162068 --> 0.153163). Saving model ...
+ETSformer_Raw | Epoch 3/15 | Train Loss: 0.1493 | Val Loss: 0.1455
+Validation loss decreased (0.153163 --> 0.145482). Saving model ...
+ETSformer_Raw | Epoch 4/15 | Train Loss: 0.1458 | Val Loss: 0.1415
+Validation loss decreased (0.145482 --> 0.141530). Saving model ...
+ETSformer_Raw | Epoch 5/15 | Train Loss: 0.1437 | Val Loss: 0.1388
+Validation loss decreased (0.141530 --> 0.138772). Saving model ...
+ETSformer_Raw | Epoch 6/15 | Train Loss: 0.1421 | Val Loss: 0.1426
+EarlyStopping counter: 1 out of 5
+ETSformer_Raw | Epoch 7/15 | Train Loss: 0.1408 | Val Loss: 0.1465
+EarlyStopping counter: 2 out of 5
+ETSformer_Raw | Epoch 8/15 | Train Loss: 0.1400 | Val Loss: 0.1305
+Validation loss decreased (0.138772 --> 0.130541). Saving model ...
+ETSformer_Raw | Epoch 9/15 | Train Loss: 0.1393 | Val Loss: 0.1418
+EarlyStopping counter: 1 out of 5
+ETSformer_Raw | Epoch 10/15 | Train Loss: 0.1386 | Val Loss: 0.1401
+EarlyStopping counter: 2 out of 5
+ETSformer_Raw | Epoch 11/15 | Train Loss: 0.1381 | Val Loss: 0.1429
+EarlyStopping counter: 3 out of 5
+ETSformer_Raw | Epoch 12/15 | Train Loss: 0.1377 | Val Loss: 0.1291
+Validation loss decreased (0.130541 --> 0.129075). Saving model ...
+ETSformer_Raw | Epoch 13/15 | Train Loss: 0.1373 | Val Loss: 0.1308
+EarlyStopping counter: 1 out of 5
+ETSformer_Raw | Epoch 14/15 | Train Loss: 0.1369 | Val Loss: 0.1339
+EarlyStopping counter: 2 out of 5
+ETSformer_Raw | Epoch 15/15 | Train Loss: 0.1368 | Val Loss: 0.1289
+Validation loss decreased (0.129075 --> 0.128912). Saving model ...
+ETSformer_Raw weights saved to: D:\AAOzone\models\训练结果\etsformer_raw.pth
+ETSformer_Raw Metrics | RMSE: 4.0402 | MAE: 2.8793 | R^2: 0.5442 | SMAPE: 71.86%
+
+[Experiment] ETSformer_PhaseWarp
+ETSformer_PhaseWarp | Epoch 1/15 | Train Loss: 0.2271 | Val Loss: 0.1267
+Validation loss decreased (inf --> 0.126652). Saving model ...
+ETSformer_PhaseWarp | Epoch 2/15 | Train Loss: 0.1406 | Val Loss: 0.1169
+Validation loss decreased (0.126652 --> 0.116877). Saving model ...
+ETSformer_PhaseWarp | Epoch 3/15 | Train Loss: 0.1377 | Val Loss: 0.1113
+Validation loss decreased (0.116877 --> 0.111312). Saving model ...
+ETSformer_PhaseWarp | Epoch 4/15 | Train Loss: 0.1353 | Val Loss: 0.1060
+Validation loss decreased (0.111312 --> 0.106029). Saving model ...
+ETSformer_PhaseWarp | Epoch 5/15 | Train Loss: 0.1305 | Val Loss: 0.1043
+Validation loss decreased (0.106029 --> 0.104317). Saving model ...
+ETSformer_PhaseWarp | Epoch 6/15 | Train Loss: 0.1259 | Val Loss: 0.1047
+EarlyStopping counter: 1 out of 5
+ETSformer_PhaseWarp | Epoch 7/15 | Train Loss: 0.1231 | Val Loss: 0.1003
+Validation loss decreased (0.104317 --> 0.100303). Saving model ...
+ETSformer_PhaseWarp | Epoch 8/15 | Train Loss: 0.1207 | Val Loss: 0.1001
+Validation loss decreased (0.100303 --> 0.100133). Saving model ...
+ETSformer_PhaseWarp | Epoch 9/15 | Train Loss: 0.1218 | Val Loss: 0.1060
+EarlyStopping counter: 1 out of 5
+ETSformer_PhaseWarp | Epoch 10/15 | Train Loss: 0.1351 | Val Loss: 0.1222
+EarlyStopping counter: 2 out of 5
+ETSformer_PhaseWarp | Epoch 11/15 | Train Loss: 0.1506 | Val Loss: 0.1240
+EarlyStopping counter: 3 out of 5
+ETSformer_PhaseWarp | Epoch 12/15 | Train Loss: 0.1522 | Val Loss: 0.1179
+EarlyStopping counter: 4 out of 5
+ETSformer_PhaseWarp | Epoch 13/15 | Train Loss: 0.1494 | Val Loss: 0.1172
+EarlyStopping counter: 5 out of 5
+ETSformer_PhaseWarp triggered early stopping.
+ETSformer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\etsformer_phasewarp.pth
+ETSformer_PhaseWarp Metrics | RMSE: 3.6128 | MAE: 2.4887 | R^2: 0.6355 | SMAPE: 70.86%
+
+[Comparison Summary]
+RMSE improvement: 0.4274
+MAE improvement : 0.3906
+R^2 gain        : 0.0913
+SMAPE gain      : 1.00%

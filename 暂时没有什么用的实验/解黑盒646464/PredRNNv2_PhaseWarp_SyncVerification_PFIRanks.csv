@@ -1,0 +1,9 @@
+feature_name,permuted_rmse,increase_rmse,rank_increase_rmse
+Prev_O3,3.0195,2.4611,4
+U_Wind,1.5922,1.0338,5
+V_Wind,0.6428,0.0844,8
+Temperature,1.5164,0.958,6
+Solar_Flux,1.4483,0.8898,7
+V_sync,3.7492,3.1908,1
+V_sync_2,3.678,3.1196,2
+V_sync_3,3.6435,3.0851,3

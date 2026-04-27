@@ -1,0 +1,85 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] Pyraformer_Raw
+Pyraformer_Raw | Epoch 1/15 | Train Loss: 0.2066 | Val Loss: 0.1275
+Validation loss decreased (inf --> 0.127495). Saving model ...
+Pyraformer_Raw | Epoch 2/15 | Train Loss: 0.1455 | Val Loss: 0.1243
+Validation loss decreased (0.127495 --> 0.124329). Saving model ...
+Pyraformer_Raw | Epoch 3/15 | Train Loss: 0.1396 | Val Loss: 0.1274
+EarlyStopping counter: 1 out of 5
+Pyraformer_Raw | Epoch 4/15 | Train Loss: 0.1355 | Val Loss: 0.1203
+Validation loss decreased (0.124329 --> 0.120349). Saving model ...
+Pyraformer_Raw | Epoch 5/15 | Train Loss: 0.1331 | Val Loss: 0.1263
+EarlyStopping counter: 1 out of 5
+Pyraformer_Raw | Epoch 6/15 | Train Loss: 0.1315 | Val Loss: 0.1285
+EarlyStopping counter: 2 out of 5
+Pyraformer_Raw | Epoch 7/15 | Train Loss: 0.1298 | Val Loss: 0.1333
+EarlyStopping counter: 3 out of 5
+Pyraformer_Raw | Epoch 8/15 | Train Loss: 0.1284 | Val Loss: 0.1243
+EarlyStopping counter: 4 out of 5
+Pyraformer_Raw | Epoch 9/15 | Train Loss: 0.1272 | Val Loss: 0.1178
+Validation loss decreased (0.120349 --> 0.117819). Saving model ...
+Pyraformer_Raw | Epoch 10/15 | Train Loss: 0.1264 | Val Loss: 0.1174
+Validation loss decreased (0.117819 --> 0.117430). Saving model ...
+Pyraformer_Raw | Epoch 11/15 | Train Loss: 0.1256 | Val Loss: 0.1260
+EarlyStopping counter: 1 out of 5
+Pyraformer_Raw | Epoch 12/15 | Train Loss: 0.1250 | Val Loss: 0.1221
+EarlyStopping counter: 2 out of 5
+Pyraformer_Raw | Epoch 13/15 | Train Loss: 0.1243 | Val Loss: 0.1172
+Validation loss decreased (0.117430 --> 0.117210). Saving model ...
+Pyraformer_Raw | Epoch 14/15 | Train Loss: 0.1239 | Val Loss: 0.1217
+EarlyStopping counter: 1 out of 5
+Pyraformer_Raw | Epoch 15/15 | Train Loss: 0.1234 | Val Loss: 0.1232
+EarlyStopping counter: 2 out of 5
+Pyraformer_Raw weights saved to: D:\AAOzone\models\训练结果\pyraformer_raw.pth
+Pyraformer_Raw Metrics | RMSE: 3.9756 | MAE: 2.6740 | R^2: 0.5587 | SMAPE: 68.28%
+
+[Experiment] Pyraformer_PhaseWarp
+Pyraformer_PhaseWarp | Epoch 1/15 | Train Loss: 0.2154 | Val Loss: 0.1283
+Validation loss decreased (inf --> 0.128303). Saving model ...
+Pyraformer_PhaseWarp | Epoch 2/15 | Train Loss: 0.1463 | Val Loss: 0.1192
+Validation loss decreased (0.128303 --> 0.119207). Saving model ...
+Pyraformer_PhaseWarp | Epoch 3/15 | Train Loss: 0.1411 | Val Loss: 0.1154
+Validation loss decreased (0.119207 --> 0.115351). Saving model ...
+Pyraformer_PhaseWarp | Epoch 4/15 | Train Loss: 0.1223 | Val Loss: 0.0919
+Validation loss decreased (0.115351 --> 0.091911). Saving model ...
+Pyraformer_PhaseWarp | Epoch 5/15 | Train Loss: 0.0998 | Val Loss: 0.0866
+Validation loss decreased (0.091911 --> 0.086650). Saving model ...
+Pyraformer_PhaseWarp | Epoch 6/15 | Train Loss: 0.0908 | Val Loss: 0.0842
+Validation loss decreased (0.086650 --> 0.084189). Saving model ...
+Pyraformer_PhaseWarp | Epoch 7/15 | Train Loss: 0.0855 | Val Loss: 0.0822
+Validation loss decreased (0.084189 --> 0.082208). Saving model ...
+Pyraformer_PhaseWarp | Epoch 8/15 | Train Loss: 0.0819 | Val Loss: 0.0776
+Validation loss decreased (0.082208 --> 0.077586). Saving model ...
+Pyraformer_PhaseWarp | Epoch 9/15 | Train Loss: 0.0821 | Val Loss: 0.0761
+Validation loss decreased (0.077586 --> 0.076128). Saving model ...
+Pyraformer_PhaseWarp | Epoch 10/15 | Train Loss: 0.0807 | Val Loss: 0.0754
+Validation loss decreased (0.076128 --> 0.075442). Saving model ...
+Pyraformer_PhaseWarp | Epoch 11/15 | Train Loss: 0.0787 | Val Loss: 0.0800
+EarlyStopping counter: 1 out of 5
+Pyraformer_PhaseWarp | Epoch 12/15 | Train Loss: 0.0791 | Val Loss: 0.0787
+EarlyStopping counter: 2 out of 5
+Pyraformer_PhaseWarp | Epoch 13/15 | Train Loss: 0.0769 | Val Loss: 0.0760
+EarlyStopping counter: 3 out of 5
+Pyraformer_PhaseWarp | Epoch 14/15 | Train Loss: 0.0767 | Val Loss: 0.0817
+EarlyStopping counter: 4 out of 5
+Pyraformer_PhaseWarp | Epoch 15/15 | Train Loss: 0.0775 | Val Loss: 0.0807
+EarlyStopping counter: 5 out of 5
+Pyraformer_PhaseWarp triggered early stopping.
+Pyraformer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\pyraformer_phasewarp.pth
+Pyraformer_PhaseWarp Metrics | RMSE: 3.1405 | MAE: 2.0073 | R^2: 0.7246 | SMAPE: 63.78%
+
+[Comparison Summary]
+RMSE improvement: 0.8351
+MAE improvement : 0.6667
+R^2 gain        : 0.1659
+SMAPE gain      : 4.50%

@@ -1,0 +1,106 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars grid size: lat=36, lon=72
+OpenMars O3 shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Reading: MCD_MY27_Lat-90-90_real.nc
+Reading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Interpolating MCD variables to the OpenMars timeline...
+Added synthetic feature V_sync (alpha=1.0000, noise_std=0.3801, train_corr=0.9988)
+Added synthetic feature V_sync_2 (alpha=1.0000, noise_std=0.6082, train_corr=0.9968)
+Added synthetic feature V_sync_3 (alpha=1.0000, noise_std=0.9123, train_corr=0.9929)
+
+[Step 4] Building scaled sequences...
+Raw feature tensor shape: (6480, 36, 72, 8)
+Training samples: 5179 | Validation samples: 1296
+Feature order: ['Prev_O3', 'U_Wind', 'V_Wind', 'Temperature', 'Solar_Flux', 'V_sync', 'V_sync_2', 'V_sync_3']
+
+[Step 5] Start training...
+Epoch 1/15 | Train Loss: 0.0696 | Val Loss: 0.0438
+Validation loss decreased (inf -> 0.043797). Saving model ...
+Epoch 2/15 | Train Loss: 0.0167 | Val Loss: 0.0239
+Validation loss decreased (0.043797 -> 0.023854). Saving model ...
+Epoch 3/15 | Train Loss: 0.0095 | Val Loss: 0.0150
+Validation loss decreased (0.023854 -> 0.015023). Saving model ...
+Epoch 4/15 | Train Loss: 0.0068 | Val Loss: 0.0117
+Validation loss decreased (0.015023 -> 0.011671). Saving model ...
+Epoch 5/15 | Train Loss: 0.0050 | Val Loss: 0.0095
+Validation loss decreased (0.011671 -> 0.009545). Saving model ...
+Epoch 6/15 | Train Loss: 0.0039 | Val Loss: 0.0078
+Validation loss decreased (0.009545 -> 0.007805). Saving model ...
+Epoch 7/15 | Train Loss: 0.0030 | Val Loss: 0.0062
+Validation loss decreased (0.007805 -> 0.006158). Saving model ...
+Epoch 8/15 | Train Loss: 0.0030 | Val Loss: 0.0063
+EarlyStopping counter: 1 out of 5
+Epoch 9/15 | Train Loss: 0.0022 | Val Loss: 0.0049
+Validation loss decreased (0.006158 -> 0.004864). Saving model ...
+Epoch 10/15 | Train Loss: 0.0023 | Val Loss: 0.0046
+Validation loss decreased (0.004864 -> 0.004580). Saving model ...
+Epoch 11/15 | Train Loss: 0.0019 | Val Loss: 0.0042
+Validation loss decreased (0.004580 -> 0.004168). Saving model ...
+Epoch 12/15 | Train Loss: 0.0014 | Val Loss: 0.0038
+Validation loss decreased (0.004168 -> 0.003774). Saving model ...
+Epoch 13/15 | Train Loss: 0.0014 | Val Loss: 0.0032
+Validation loss decreased (0.003774 -> 0.003247). Saving model ...
+Epoch 14/15 | Train Loss: 0.0015 | Val Loss: 0.0031
+Validation loss decreased (0.003247 -> 0.003055). Saving model ...
+Epoch 15/15 | Train Loss: 0.0011 | Val Loss: 0.0027
+Validation loss decreased (0.003055 -> 0.002696). Saving model ...
+Loading best model state from checkpoint...
+
+[Step 6] Evaluation...
+RMSE: 0.5584
+MAE : 0.3793
+R2  : 0.9913
+
+Advanced Metrics
+Filtered MAPE (>0.1): 17.09%
+SMAPE: 17.17%
+
+[Step 7] Visualization...
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_O3_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_U_Wind_Sin_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_U_Wind_Cos_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_Wind_Sin_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_Wind_Cos_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_Temperature_Sin_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_Temperature_Cos_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_Solar_Flux_Sin_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_Solar_Flux_Cos_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_Sin_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_Cos_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_2_Sin_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_2_Cos_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_3_Sin_SpatialModulation.png
+Saved spatial modulation map: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_3_Cos_SpatialModulation.png
+Saved sync-branch summary figure: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_BranchSummary.png
+Saved sync-variable summary to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_SyncSummary.txt
+Saved sync-channel comparison CSV to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_SyncChannelComparison.csv
+Saved sync-branch comparison CSV to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_SyncBranchComparison.csv
+Saved sync-branch summary figure: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_2_BranchSummary.png
+Saved sync-variable summary to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_2_SyncSummary.txt
+Saved sync-channel comparison CSV to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_2_SyncChannelComparison.csv
+Saved sync-branch comparison CSV to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_2_SyncBranchComparison.csv
+Saved sync-branch summary figure: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_3_BranchSummary.png
+Saved sync-variable summary to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_3_SyncSummary.txt
+Saved sync-channel comparison CSV to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_3_SyncChannelComparison.csv
+Saved sync-branch comparison CSV to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_V_sync_3_SyncBranchComparison.csv
+Saved zonal-mean error figure: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_ZonalMeanError.png
+Saved scatter figure: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_O3Scatter.png
+
+Saved model weights to: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification.pth
+
+[Step 8] Permutation Feature Importance...
+Baseline RMSE: 0.5584
+Feature [Prev_O3] -> permuted RMSE: 3.0195, increase: 2.4611
+Feature [U_Wind] -> permuted RMSE: 1.5922, increase: 1.0338
+Feature [V_Wind] -> permuted RMSE: 0.6428, increase: 0.0844
+Feature [Temperature] -> permuted RMSE: 1.5164, increase: 0.9580
+Feature [Solar_Flux] -> permuted RMSE: 1.4483, increase: 0.8898
+Feature [V_sync] -> permuted RMSE: 3.7492, increase: 3.1908
+Feature [V_sync_2] -> permuted RMSE: 3.6780, increase: 3.1196
+Feature [V_sync_3] -> permuted RMSE: 3.6435, increase: 3.0851
+Saved PFI figure: D:\AAOzone\models\训练结果\PredRNNv2_PhaseWarp_SyncVerification_PFI.png

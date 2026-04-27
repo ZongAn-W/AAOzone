@@ -1,0 +1,7 @@
+branch_name,feature_name,component,mean_abs_W,mean_abs_B,mean_abs_K,rank_mean_abs_W_sync_branch,rank_mean_abs_B_sync_branch,rank_mean_abs_K_sync_branch
+V_sync_COS,V_sync,COS,1.024723,0.050841,0.049833,1,1,2
+V_sync_SIN,V_sync,SIN,1.010807,0.03034,0.046409,2,4,3
+V_sync_2_COS,V_sync_2,COS,0.981952,0.041086,0.042051,5,3,5
+V_sync_2_SIN,V_sync_2,SIN,0.989737,0.030103,0.041505,3,5,6
+V_sync_3_COS,V_sync_3,COS,0.984863,0.049809,0.050989,4,2,1
+V_sync_3_SIN,V_sync_3,SIN,0.980586,0.025677,0.04235,6,6,4

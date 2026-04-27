@@ -1,0 +1,74 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] Informer_Raw
+Informer_Raw | Epoch 1/15 | Train Loss: 0.1857 | Val Loss: 0.1295
+Validation loss decreased (inf --> 0.129508). Saving model ...
+Informer_Raw | Epoch 2/15 | Train Loss: 0.1382 | Val Loss: 0.1267
+Validation loss decreased (0.129508 --> 0.126729). Saving model ...
+Informer_Raw | Epoch 3/15 | Train Loss: 0.1300 | Val Loss: 0.1243
+Validation loss decreased (0.126729 --> 0.124255). Saving model ...
+Informer_Raw | Epoch 4/15 | Train Loss: 0.1261 | Val Loss: 0.1250
+EarlyStopping counter: 1 out of 5
+Informer_Raw | Epoch 5/15 | Train Loss: 0.1231 | Val Loss: 0.1167
+Validation loss decreased (0.124255 --> 0.116728). Saving model ...
+Informer_Raw | Epoch 6/15 | Train Loss: 0.1210 | Val Loss: 0.1131
+Validation loss decreased (0.116728 --> 0.113104). Saving model ...
+Informer_Raw | Epoch 7/15 | Train Loss: 0.1195 | Val Loss: 0.1183
+EarlyStopping counter: 1 out of 5
+Informer_Raw | Epoch 8/15 | Train Loss: 0.1178 | Val Loss: 0.1229
+EarlyStopping counter: 2 out of 5
+Informer_Raw | Epoch 9/15 | Train Loss: 0.1167 | Val Loss: 0.1173
+EarlyStopping counter: 3 out of 5
+Informer_Raw | Epoch 10/15 | Train Loss: 0.1157 | Val Loss: 0.1170
+EarlyStopping counter: 4 out of 5
+Informer_Raw | Epoch 11/15 | Train Loss: 0.1147 | Val Loss: 0.1155
+EarlyStopping counter: 5 out of 5
+Informer_Raw triggered early stopping.
+Informer_Raw weights saved to: D:\AAOzone\models\训练结果\informer_raw.pth
+Informer_Raw Metrics | RMSE: 3.8995 | MAE: 2.5715 | R^2: 0.5754 | SMAPE: 67.49%
+
+[Experiment] Informer_PhaseWarp
+Informer_PhaseWarp | Epoch 1/15 | Train Loss: 0.2059 | Val Loss: 0.1035
+Validation loss decreased (inf --> 0.103464). Saving model ...
+Informer_PhaseWarp | Epoch 2/15 | Train Loss: 0.1185 | Val Loss: 0.1106
+EarlyStopping counter: 1 out of 5
+Informer_PhaseWarp | Epoch 3/15 | Train Loss: 0.1107 | Val Loss: 0.1044
+EarlyStopping counter: 2 out of 5
+Informer_PhaseWarp | Epoch 4/15 | Train Loss: 0.1048 | Val Loss: 0.1003
+Validation loss decreased (0.103464 --> 0.100323). Saving model ...
+Informer_PhaseWarp | Epoch 5/15 | Train Loss: 0.1020 | Val Loss: 0.1236
+EarlyStopping counter: 1 out of 5
+Informer_PhaseWarp | Epoch 6/15 | Train Loss: 0.0978 | Val Loss: 0.1200
+EarlyStopping counter: 2 out of 5
+Informer_PhaseWarp | Epoch 7/15 | Train Loss: 0.0938 | Val Loss: 0.1181
+EarlyStopping counter: 3 out of 5
+Informer_PhaseWarp | Epoch 8/15 | Train Loss: 0.0930 | Val Loss: 0.0897
+Validation loss decreased (0.100323 --> 0.089718). Saving model ...
+Informer_PhaseWarp | Epoch 9/15 | Train Loss: 0.0901 | Val Loss: 0.0936
+EarlyStopping counter: 1 out of 5
+Informer_PhaseWarp | Epoch 10/15 | Train Loss: 0.0934 | Val Loss: 0.1246
+EarlyStopping counter: 2 out of 5
+Informer_PhaseWarp | Epoch 11/15 | Train Loss: 0.0961 | Val Loss: 0.1170
+EarlyStopping counter: 3 out of 5
+Informer_PhaseWarp | Epoch 12/15 | Train Loss: 0.0986 | Val Loss: 0.1190
+EarlyStopping counter: 4 out of 5
+Informer_PhaseWarp | Epoch 13/15 | Train Loss: 0.0980 | Val Loss: 0.1146
+EarlyStopping counter: 5 out of 5
+Informer_PhaseWarp triggered early stopping.
+Informer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\informer_phasewarp.pth
+Informer_PhaseWarp Metrics | RMSE: 3.4266 | MAE: 2.3148 | R^2: 0.6721 | SMAPE: 68.16%
+
+[Comparison Summary]
+RMSE improvement: 0.4730
+MAE improvement : 0.2567
+R^2 gain        : 0.0968
+SMAPE gain      : -0.67%

@@ -1,0 +1,2 @@
+rmse,mae,r2,filtered_mape_pct,smape_pct,baseline_rmse
+0.5584,0.3793,0.9913,17.09,17.17,0.5584

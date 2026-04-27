@@ -1,0 +1,84 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] NBEATS_Raw
+NBEATS_Raw | Epoch 1/15 | Train Loss: 0.2128 | Val Loss: 0.1297
+Validation loss decreased (inf --> 0.129716). Saving model ...
+NBEATS_Raw | Epoch 2/15 | Train Loss: 0.1443 | Val Loss: 0.1267
+Validation loss decreased (0.129716 --> 0.126738). Saving model ...
+NBEATS_Raw | Epoch 3/15 | Train Loss: 0.1366 | Val Loss: 0.1170
+Validation loss decreased (0.126738 --> 0.116953). Saving model ...
+NBEATS_Raw | Epoch 4/15 | Train Loss: 0.1271 | Val Loss: 0.1205
+EarlyStopping counter: 1 out of 5
+NBEATS_Raw | Epoch 5/15 | Train Loss: 0.1217 | Val Loss: 0.1174
+EarlyStopping counter: 2 out of 5
+NBEATS_Raw | Epoch 6/15 | Train Loss: 0.1182 | Val Loss: 0.1154
+Validation loss decreased (0.116953 --> 0.115359). Saving model ...
+NBEATS_Raw | Epoch 7/15 | Train Loss: 0.1157 | Val Loss: 0.1089
+Validation loss decreased (0.115359 --> 0.108857). Saving model ...
+NBEATS_Raw | Epoch 8/15 | Train Loss: 0.1136 | Val Loss: 0.1137
+EarlyStopping counter: 1 out of 5
+NBEATS_Raw | Epoch 9/15 | Train Loss: 0.1121 | Val Loss: 0.1066
+Validation loss decreased (0.108857 --> 0.106641). Saving model ...
+NBEATS_Raw | Epoch 10/15 | Train Loss: 0.1108 | Val Loss: 0.1122
+EarlyStopping counter: 1 out of 5
+NBEATS_Raw | Epoch 11/15 | Train Loss: 0.1095 | Val Loss: 0.1077
+EarlyStopping counter: 2 out of 5
+NBEATS_Raw | Epoch 12/15 | Train Loss: 0.1085 | Val Loss: 0.1091
+EarlyStopping counter: 3 out of 5
+NBEATS_Raw | Epoch 13/15 | Train Loss: 0.1075 | Val Loss: 0.1055
+Validation loss decreased (0.106641 --> 0.105508). Saving model ...
+NBEATS_Raw | Epoch 14/15 | Train Loss: 0.1066 | Val Loss: 0.1077
+EarlyStopping counter: 1 out of 5
+NBEATS_Raw | Epoch 15/15 | Train Loss: 0.1058 | Val Loss: 0.1017
+Validation loss decreased (0.105508 --> 0.101673). Saving model ...
+NBEATS_Raw weights saved to: D:\AAOzone\models\训练结果\nbeats_raw.pth
+NBEATS_Raw Metrics | RMSE: 3.6325 | MAE: 2.3923 | R^2: 0.6315 | SMAPE: 64.70%
+
+[Experiment] NBEATS_PhaseWarp
+NBEATS_PhaseWarp | Epoch 1/15 | Train Loss: 0.2303 | Val Loss: 0.1171
+Validation loss decreased (inf --> 0.117054). Saving model ...
+NBEATS_PhaseWarp | Epoch 2/15 | Train Loss: 0.1332 | Val Loss: 0.1047
+Validation loss decreased (0.117054 --> 0.104701). Saving model ...
+NBEATS_PhaseWarp | Epoch 3/15 | Train Loss: 0.1190 | Val Loss: 0.0959
+Validation loss decreased (0.104701 --> 0.095922). Saving model ...
+NBEATS_PhaseWarp | Epoch 4/15 | Train Loss: 0.1014 | Val Loss: 0.0860
+Validation loss decreased (0.095922 --> 0.085976). Saving model ...
+NBEATS_PhaseWarp | Epoch 5/15 | Train Loss: 0.0945 | Val Loss: 0.0858
+Validation loss decreased (0.085976 --> 0.085767). Saving model ...
+NBEATS_PhaseWarp | Epoch 6/15 | Train Loss: 0.0917 | Val Loss: 0.0912
+EarlyStopping counter: 1 out of 5
+NBEATS_PhaseWarp | Epoch 7/15 | Train Loss: 0.0910 | Val Loss: 0.0946
+EarlyStopping counter: 2 out of 5
+NBEATS_PhaseWarp | Epoch 8/15 | Train Loss: 0.0897 | Val Loss: 0.0903
+EarlyStopping counter: 3 out of 5
+NBEATS_PhaseWarp | Epoch 9/15 | Train Loss: 0.0878 | Val Loss: 0.0859
+EarlyStopping counter: 4 out of 5
+NBEATS_PhaseWarp | Epoch 10/15 | Train Loss: 0.0836 | Val Loss: 0.0801
+Validation loss decreased (0.085767 --> 0.080124). Saving model ...
+NBEATS_PhaseWarp | Epoch 11/15 | Train Loss: 0.0804 | Val Loss: 0.0816
+EarlyStopping counter: 1 out of 5
+NBEATS_PhaseWarp | Epoch 12/15 | Train Loss: 0.0796 | Val Loss: 0.0780
+Validation loss decreased (0.080124 --> 0.078045). Saving model ...
+NBEATS_PhaseWarp | Epoch 13/15 | Train Loss: 0.0785 | Val Loss: 0.0780
+Validation loss decreased (0.078045 --> 0.078023). Saving model ...
+NBEATS_PhaseWarp | Epoch 14/15 | Train Loss: 0.0779 | Val Loss: 0.0749
+Validation loss decreased (0.078023 --> 0.074861). Saving model ...
+NBEATS_PhaseWarp | Epoch 15/15 | Train Loss: 0.0773 | Val Loss: 0.0751
+EarlyStopping counter: 1 out of 5
+NBEATS_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\nbeats_phasewarp.pth
+NBEATS_PhaseWarp Metrics | RMSE: 3.0787 | MAE: 2.1180 | R^2: 0.7353 | SMAPE: 62.18%
+
+[Comparison Summary]
+RMSE improvement: 0.5538
+MAE improvement : 0.2743
+R^2 gain        : 0.1038
+SMAPE gain      : 2.52%

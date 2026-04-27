@@ -1,0 +1,75 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] FEDformer_Raw
+FEDformer_Raw | Epoch 1/15 | Train Loss: 0.2793 | Val Loss: 0.2130
+Validation loss decreased (inf --> 0.212993). Saving model ...
+FEDformer_Raw | Epoch 2/15 | Train Loss: 0.1743 | Val Loss: 0.1708
+Validation loss decreased (0.212993 --> 0.170795). Saving model ...
+FEDformer_Raw | Epoch 3/15 | Train Loss: 0.1518 | Val Loss: 0.1560
+Validation loss decreased (0.170795 --> 0.155975). Saving model ...
+FEDformer_Raw | Epoch 4/15 | Train Loss: 0.1435 | Val Loss: 0.1475
+Validation loss decreased (0.155975 --> 0.147486). Saving model ...
+FEDformer_Raw | Epoch 5/15 | Train Loss: 0.1398 | Val Loss: 0.1409
+Validation loss decreased (0.147486 --> 0.140937). Saving model ...
+FEDformer_Raw | Epoch 6/15 | Train Loss: 0.1376 | Val Loss: 0.1393
+Validation loss decreased (0.140937 --> 0.139346). Saving model ...
+FEDformer_Raw | Epoch 7/15 | Train Loss: 0.1361 | Val Loss: 0.1383
+Validation loss decreased (0.139346 --> 0.138265). Saving model ...
+FEDformer_Raw | Epoch 8/15 | Train Loss: 0.1348 | Val Loss: 0.1320
+Validation loss decreased (0.138265 --> 0.131988). Saving model ...
+FEDformer_Raw | Epoch 9/15 | Train Loss: 0.1336 | Val Loss: 0.1303
+Validation loss decreased (0.131988 --> 0.130302). Saving model ...
+FEDformer_Raw | Epoch 10/15 | Train Loss: 0.1325 | Val Loss: 0.1319
+EarlyStopping counter: 1 out of 5
+FEDformer_Raw | Epoch 11/15 | Train Loss: 0.1313 | Val Loss: 0.1340
+EarlyStopping counter: 2 out of 5
+FEDformer_Raw | Epoch 12/15 | Train Loss: 0.1295 | Val Loss: 0.1235
+Validation loss decreased (0.130302 --> 0.123548). Saving model ...
+FEDformer_Raw | Epoch 13/15 | Train Loss: 0.1268 | Val Loss: 0.1400
+EarlyStopping counter: 1 out of 5
+FEDformer_Raw | Epoch 14/15 | Train Loss: 0.1251 | Val Loss: 0.1243
+EarlyStopping counter: 2 out of 5
+FEDformer_Raw | Epoch 15/15 | Train Loss: 0.1241 | Val Loss: 0.1278
+EarlyStopping counter: 3 out of 5
+FEDformer_Raw weights saved to: D:\AAOzone\models\训练结果\fedformer_raw.pth
+FEDformer_Raw Metrics | RMSE: 3.9601 | MAE: 2.8280 | R^2: 0.5621 | SMAPE: 71.30%
+
+[Experiment] FEDformer_PhaseWarp
+FEDformer_PhaseWarp | Epoch 1/15 | Train Loss: 0.2397 | Val Loss: 0.1704
+Validation loss decreased (inf --> 0.170448). Saving model ...
+FEDformer_PhaseWarp | Epoch 2/15 | Train Loss: 0.1780 | Val Loss: 0.1270
+Validation loss decreased (0.170448 --> 0.127040). Saving model ...
+FEDformer_PhaseWarp | Epoch 3/15 | Train Loss: 0.1468 | Val Loss: 0.1108
+Validation loss decreased (0.127040 --> 0.110777). Saving model ...
+FEDformer_PhaseWarp | Epoch 4/15 | Train Loss: 0.1414 | Val Loss: 0.1119
+EarlyStopping counter: 1 out of 5
+FEDformer_PhaseWarp | Epoch 5/15 | Train Loss: 0.1437 | Val Loss: 0.1100
+Validation loss decreased (0.110777 --> 0.109990). Saving model ...
+FEDformer_PhaseWarp | Epoch 6/15 | Train Loss: 0.1492 | Val Loss: 0.1184
+EarlyStopping counter: 1 out of 5
+FEDformer_PhaseWarp | Epoch 7/15 | Train Loss: 0.1498 | Val Loss: 0.1192
+EarlyStopping counter: 2 out of 5
+FEDformer_PhaseWarp | Epoch 8/15 | Train Loss: 0.1485 | Val Loss: 0.1195
+EarlyStopping counter: 3 out of 5
+FEDformer_PhaseWarp | Epoch 9/15 | Train Loss: 0.1467 | Val Loss: 0.1273
+EarlyStopping counter: 4 out of 5
+FEDformer_PhaseWarp | Epoch 10/15 | Train Loss: 0.1449 | Val Loss: 0.1214
+EarlyStopping counter: 5 out of 5
+FEDformer_PhaseWarp triggered early stopping.
+FEDformer_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\fedformer_phasewarp.pth
+FEDformer_PhaseWarp Metrics | RMSE: 3.8351 | MAE: 2.5894 | R^2: 0.5893 | SMAPE: 68.94%
+
+[Comparison Summary]
+RMSE improvement: 0.1251
+MAE improvement : 0.2386
+R^2 gain        : 0.0272
+SMAPE gain      : 2.37%

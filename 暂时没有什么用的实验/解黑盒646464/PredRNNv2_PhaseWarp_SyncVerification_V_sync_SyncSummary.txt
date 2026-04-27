@@ -1,0 +1,228 @@
+Experiment: PredRNNv2_PhaseWarp_SyncVerification
+Feature: V_sync
+
+Synthetic variable generation:
+  alpha = 1.000000
+  signal_std = 7.602559
+  noise_std = 0.380128
+  train_corr_with_o3 = 0.998752
+
+SIN component:
+  mean_abs_W = 1.010807
+  median_abs_W = 1.017576
+  std_abs_W = 0.050406
+  rms_abs_W = 1.012063
+  max_abs_W = 1.176046
+  p95_abs_W = 1.085996
+  p99_abs_W = 1.119480
+  mean_abs_B = 0.030340
+  median_abs_B = 0.026511
+  std_abs_B = 0.022380
+  rms_abs_B = 0.037701
+  max_abs_B = 0.127151
+  p95_abs_B = 0.073930
+  p99_abs_B = 0.100001
+  frac_abs_B_lt_0.05 = 0.826775
+  frac_abs_B_gt_0.10 = 0.010031
+  frac_abs_B_gt_0.20 = 0.000000
+  mean_abs_K = 0.046409
+  median_abs_K = 0.038864
+  std_abs_K = 0.034887
+  rms_abs_K = 0.058060
+  max_abs_K = 0.151583
+  p95_abs_K = 0.117367
+  p99_abs_K = 0.134691
+  frac_abs_K_lt_0.05 = 0.616127
+  frac_abs_K_gt_0.10 = 0.103781
+  frac_abs_K_gt_0.20 = 0.000000
+
+COS component:
+  mean_abs_W = 1.024723
+  median_abs_W = 1.021915
+  std_abs_W = 0.066394
+  rms_abs_W = 1.026872
+  max_abs_W = 1.303387
+  p95_abs_W = 1.144746
+  p99_abs_W = 1.185202
+  mean_abs_B = 0.050841
+  median_abs_B = 0.043687
+  std_abs_B = 0.037652
+  rms_abs_B = 0.063266
+  max_abs_B = 0.259044
+  p95_abs_B = 0.122632
+  p99_abs_B = 0.158208
+  frac_abs_B_lt_0.05 = 0.562886
+  frac_abs_B_gt_0.10 = 0.111497
+  frac_abs_B_gt_0.20 = 0.002701
+  mean_abs_K = 0.049833
+  median_abs_K = 0.043067
+  std_abs_K = 0.035705
+  rms_abs_K = 0.061304
+  max_abs_K = 0.228123
+  p95_abs_K = 0.117518
+  p99_abs_K = 0.150639
+  frac_abs_K_lt_0.05 = 0.569830
+  frac_abs_K_gt_0.10 = 0.097222
+  frac_abs_K_gt_0.20 = 0.001157
+
+Feature-level comparison of |W|, |B| and |K| (sin/cos combined):
+  Feature            mean|W|    rank     mean|B|    rank     mean|K|    rank
+  U_Wind            0.996081       4    0.047799       3    0.056433       1
+  V_Wind            0.989508       5    0.043705       4    0.039749       7
+  Temperature       1.012167       2    0.053605       2    0.042595       5
+  Solar_Flux        1.001675       3    0.063783       1    0.043522       4
+  V_sync            1.017765       1    0.040591       5    0.048121       2
+  V_sync_2          0.985844       6    0.035595       7    0.041778       6
+  V_sync_3          0.982724       7    0.037743       6    0.046670       3
+
+Additional channel metrics for |B| and |K|:
+  Feature          median|B|   median|K|      std|B|      std|K|      rms|B|      rms|K|
+  U_Wind            0.038309    0.049192    0.039400    0.040618    0.061945    0.069531
+  V_Wind            0.037134    0.032256    0.032545    0.032004    0.054491    0.051031
+  Temperature       0.046920    0.035412    0.038675    0.034199    0.066100    0.054625
+  Solar_Flux        0.053138    0.036337    0.048223    0.033494    0.079961    0.054918
+  V_sync            0.032823    0.040961    0.032624    0.035340    0.052077    0.059704
+  V_sync_2          0.029409    0.035812    0.028553    0.031502    0.045632    0.052324
+  V_sync_3          0.029428    0.040109    0.031282    0.033419    0.049022    0.057401
+
+  Feature             p99|B|      p99|K|    frac|B|>0.10    frac|K|>0.10    frac|B|>0.20    frac|K|>0.20
+  U_Wind            0.175042    0.169685        0.108218        0.152006        0.004823        0.004051
+  V_Wind            0.142913    0.145182        0.064429        0.056327        0.000193        0.000000
+  Temperature       0.154542    0.156929        0.136381        0.066744        0.000000        0.002122
+  Solar_Flux        0.187591    0.141906        0.241512        0.069637        0.005594        0.001350
+  V_sync            0.144797    0.141760        0.060764        0.100502        0.001350        0.000579
+  V_sync_2          0.126578    0.136930        0.036265        0.055748        0.000000        0.000772
+  V_sync_3          0.133311    0.132406        0.054012        0.074653        0.000193        0.000965
+
+mean_abs_W ranking (descending, sin/cos combined):
+  1. V_sync       1.017765  <== target
+  2. Temperature  1.012167
+  3. Solar_Flux   1.001675
+  4. U_Wind       0.996081
+  5. V_Wind       0.989508
+  6. V_sync_2     0.985844
+  7. V_sync_3     0.982724
+  => V_sync rank = 1/7
+  => V_sync / Temperature = 1.006x
+  => V_sync / Solar_Flux = 1.016x
+  => V_sync / U_Wind = 1.022x
+  => V_sync / V_Wind = 1.029x
+  => V_sync / V_sync_2 = 1.032x
+  => V_sync / V_sync_3 = 1.036x
+
+mean_abs_B ranking (descending, sin/cos combined):
+  1. Solar_Flux   0.063783
+  2. Temperature  0.053605
+  3. U_Wind       0.047799
+  4. V_Wind       0.043705
+  5. V_sync       0.040591  <== target
+  6. V_sync_3     0.037743
+  7. V_sync_2     0.035595
+  => V_sync rank = 5/7
+  => V_sync / Solar_Flux = 0.636x
+  => V_sync / Temperature = 0.757x
+  => V_sync / U_Wind = 0.849x
+  => V_sync / V_Wind = 0.929x
+  => V_sync / V_sync_3 = 1.075x
+  => V_sync / V_sync_2 = 1.140x
+
+mean_abs_K ranking (descending, sin/cos combined):
+  1. U_Wind       0.056433
+  2. V_sync       0.048121  <== target
+  3. V_sync_3     0.046670
+  4. Solar_Flux   0.043522
+  5. Temperature  0.042595
+  6. V_sync_2     0.041778
+  7. V_Wind       0.039749
+  => V_sync rank = 2/7
+  => V_sync / U_Wind = 0.853x
+  => V_sync / V_sync_3 = 1.031x
+  => V_sync / Solar_Flux = 1.106x
+  => V_sync / Temperature = 1.130x
+  => V_sync / V_sync_2 = 1.152x
+  => V_sync / V_Wind = 1.211x
+
+median_abs_B ranking (descending, sin/cos combined):
+  1. Solar_Flux   0.053138
+  2. Temperature  0.046920
+  3. U_Wind       0.038309
+  4. V_Wind       0.037134
+  5. V_sync       0.032823  <== target
+  6. V_sync_3     0.029428
+  7. V_sync_2     0.029409
+  => V_sync rank = 5/7
+  => V_sync / Solar_Flux = 0.618x
+  => V_sync / Temperature = 0.700x
+  => V_sync / U_Wind = 0.857x
+  => V_sync / V_Wind = 0.884x
+  => V_sync / V_sync_3 = 1.115x
+  => V_sync / V_sync_2 = 1.116x
+
+median_abs_K ranking (descending, sin/cos combined):
+  1. U_Wind       0.049192
+  2. V_sync       0.040961  <== target
+  3. V_sync_3     0.040109
+  4. Solar_Flux   0.036337
+  5. V_sync_2     0.035812
+  6. Temperature  0.035412
+  7. V_Wind       0.032256
+  => V_sync rank = 2/7
+  => V_sync / U_Wind = 0.833x
+  => V_sync / V_sync_3 = 1.021x
+  => V_sync / Solar_Flux = 1.127x
+  => V_sync / V_sync_2 = 1.144x
+  => V_sync / Temperature = 1.157x
+  => V_sync / V_Wind = 1.270x
+
+p99_abs_B ranking (descending, sin/cos combined):
+  1. Solar_Flux   0.187591
+  2. U_Wind       0.175042
+  3. Temperature  0.154542
+  4. V_sync       0.144797  <== target
+  5. V_Wind       0.142913
+  6. V_sync_3     0.133311
+  7. V_sync_2     0.126578
+  => V_sync rank = 4/7
+  => V_sync / Solar_Flux = 0.772x
+  => V_sync / U_Wind = 0.827x
+  => V_sync / Temperature = 0.937x
+  => V_sync / V_Wind = 1.013x
+  => V_sync / V_sync_3 = 1.086x
+  => V_sync / V_sync_2 = 1.144x
+
+p99_abs_K ranking (descending, sin/cos combined):
+  1. U_Wind       0.169685
+  2. Temperature  0.156929
+  3. V_Wind       0.145182
+  4. Solar_Flux   0.141906
+  5. V_sync       0.141760  <== target
+  6. V_sync_2     0.136930
+  7. V_sync_3     0.132406
+  => V_sync rank = 5/7
+  => V_sync / U_Wind = 0.835x
+  => V_sync / Temperature = 0.903x
+  => V_sync / V_Wind = 0.976x
+  => V_sync / Solar_Flux = 0.999x
+  => V_sync / V_sync_2 = 1.035x
+  => V_sync / V_sync_3 = 1.071x
+
+Interpretation:
+  Ratio < 1.0x means V_sync is smaller than that channel.
+  Ratio > 1.0x means V_sync is larger than that channel.
+
+Branch-level comparison of |W|, |B| and |K|:
+  Feature       Comp         mean|W|     mean|B|     mean|K|
+  Solar_Flux    COS         1.008290    0.048583    0.043044
+  Solar_Flux    SIN         0.995060    0.078983    0.044000
+  Temperature   COS         1.008978    0.044313    0.045356
+  Temperature   SIN         1.015355    0.062896    0.039833
+  U_Wind        COS         1.000461    0.059489    0.052857
+  U_Wind        SIN         0.991700    0.036110    0.060010
+  V_Wind        COS         0.981810    0.045244    0.042552
+  V_Wind        SIN         0.997205    0.042166    0.036945
+  V_sync        COS         1.024723    0.050841    0.049833
+  V_sync        SIN         1.010807    0.030340    0.046409
+  V_sync_2      COS         0.981952    0.041086    0.042051
+  V_sync_2      SIN         0.989737    0.030103    0.041505
+  V_sync_3      COS         0.984863    0.049809    0.050989
+  V_sync_3      SIN         0.980586    0.025677    0.042350

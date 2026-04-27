@@ -1,0 +1,8 @@
+variant	description	active_uvst	output_channels	trainable_params	rmse	mae	r2	smape	rmse_delta_vs_raw	mae_delta_vs_raw	r2_delta_vs_raw	smape_delta_vs_raw
+raw	Raw O3+UVST inputs, no explicit Ls or PhaseWarp.	U,V,S,T	5	245699	1.268225	0.787965	0.955089	0.251867	0.000000	0.000000	0.000000	0.000000
+ls_concat	Raw inputs plus one normalized Ls channel.	U,V,S,T	6	247715	1.260828	0.784420	0.955611	0.264984	0.007396	0.003546	0.000522	-0.013117
+sincos_concat	Raw inputs plus sin(Ls) and cos(Ls) channels.	U,V,S,T	7	249731	1.221151	0.749975	0.958361	0.241233	0.047074	0.037991	0.003272	0.010634
+fixed_fourier	Fixed O3+sin(Ls) and UVST*sin/cos(Ls), no learnable front-end params.	U,V,S,T	9	253763	1.341095	0.841492	0.949780	0.259644	-0.072870	-0.053527	-0.005309	-0.007778
+phasewarp_full	Full learnable PhaseWarp: W, B, K, O3 fusion, spatially varying params.	U,V,S,T	9	323747	1.040085	0.606994	0.969794	0.196829	0.228140	0.180971	0.014705	0.055038
+phasewarp_no_k	PhaseWarp without learnable K phase-warp terms.	U,V,S,T	9	300419	1.098752	0.651206	0.966290	0.220926	0.274609	0.204532	0.018956	0.055362
+phasewarp_no_b	PhaseWarp without learnable B phase-bias terms.	U,V,S,T	9	300419	1.112506	0.663649	0.965441	0.222429	0.260855	0.192089	0.018107	0.053859

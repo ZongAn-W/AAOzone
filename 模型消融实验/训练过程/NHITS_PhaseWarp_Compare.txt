@@ -1,0 +1,84 @@
+Training Device: cuda
+
+[Step 1] Loading OpenMars Data...
+OpenMars final shape: (6480, 36, 72)
+
+[Step 2] Loading MCD Data...
+Loading: MCD_MY27_Lat-90-90_real.nc
+Loading: MCD_MY28_Lat-90-90_real.nc
+
+[Step 3] Aligning MCD to OpenMars time axis...
+
+[Experiment] NHITS_Raw
+NHITS_Raw | Epoch 1/15 | Train Loss: 0.2619 | Val Loss: 0.1978
+Validation loss decreased (inf --> 0.197817). Saving model ...
+NHITS_Raw | Epoch 2/15 | Train Loss: 0.1530 | Val Loss: 0.1501
+Validation loss decreased (0.197817 --> 0.150108). Saving model ...
+NHITS_Raw | Epoch 3/15 | Train Loss: 0.1439 | Val Loss: 0.1499
+Validation loss decreased (0.150108 --> 0.149899). Saving model ...
+NHITS_Raw | Epoch 4/15 | Train Loss: 0.1406 | Val Loss: 0.1551
+EarlyStopping counter: 1 out of 5
+NHITS_Raw | Epoch 5/15 | Train Loss: 0.1387 | Val Loss: 0.1491
+Validation loss decreased (0.149899 --> 0.149062). Saving model ...
+NHITS_Raw | Epoch 6/15 | Train Loss: 0.1371 | Val Loss: 0.1414
+Validation loss decreased (0.149062 --> 0.141385). Saving model ...
+NHITS_Raw | Epoch 7/15 | Train Loss: 0.1343 | Val Loss: 0.1375
+Validation loss decreased (0.141385 --> 0.137468). Saving model ...
+NHITS_Raw | Epoch 8/15 | Train Loss: 0.1279 | Val Loss: 0.1315
+Validation loss decreased (0.137468 --> 0.131466). Saving model ...
+NHITS_Raw | Epoch 9/15 | Train Loss: 0.1253 | Val Loss: 0.1259
+Validation loss decreased (0.131466 --> 0.125900). Saving model ...
+NHITS_Raw | Epoch 10/15 | Train Loss: 0.1241 | Val Loss: 0.1309
+EarlyStopping counter: 1 out of 5
+NHITS_Raw | Epoch 11/15 | Train Loss: 0.1228 | Val Loss: 0.1309
+EarlyStopping counter: 2 out of 5
+NHITS_Raw | Epoch 12/15 | Train Loss: 0.1217 | Val Loss: 0.1368
+EarlyStopping counter: 3 out of 5
+NHITS_Raw | Epoch 13/15 | Train Loss: 0.1207 | Val Loss: 0.1234
+Validation loss decreased (0.125900 --> 0.123402). Saving model ...
+NHITS_Raw | Epoch 14/15 | Train Loss: 0.1200 | Val Loss: 0.1215
+Validation loss decreased (0.123402 --> 0.121528). Saving model ...
+NHITS_Raw | Epoch 15/15 | Train Loss: 0.1191 | Val Loss: 0.1292
+EarlyStopping counter: 1 out of 5
+NHITS_Raw weights saved to: D:\AAOzone\models\训练结果\nhits_raw.pth
+NHITS_Raw Metrics | RMSE: 4.0593 | MAE: 2.7763 | R^2: 0.5399 | SMAPE: 69.35%
+
+[Experiment] NHITS_PhaseWarp
+NHITS_PhaseWarp | Epoch 1/15 | Train Loss: 0.1792 | Val Loss: 0.1231
+Validation loss decreased (inf --> 0.123133). Saving model ...
+NHITS_PhaseWarp | Epoch 2/15 | Train Loss: 0.1516 | Val Loss: 0.1117
+Validation loss decreased (0.123133 --> 0.111736). Saving model ...
+NHITS_PhaseWarp | Epoch 3/15 | Train Loss: 0.1563 | Val Loss: 0.1172
+EarlyStopping counter: 1 out of 5
+NHITS_PhaseWarp | Epoch 4/15 | Train Loss: 0.1518 | Val Loss: 0.1221
+EarlyStopping counter: 2 out of 5
+NHITS_PhaseWarp | Epoch 5/15 | Train Loss: 0.1251 | Val Loss: 0.1170
+EarlyStopping counter: 3 out of 5
+NHITS_PhaseWarp | Epoch 6/15 | Train Loss: 0.1103 | Val Loss: 0.1118
+EarlyStopping counter: 4 out of 5
+NHITS_PhaseWarp | Epoch 7/15 | Train Loss: 0.1009 | Val Loss: 0.1076
+Validation loss decreased (0.111736 --> 0.107593). Saving model ...
+NHITS_PhaseWarp | Epoch 8/15 | Train Loss: 0.0943 | Val Loss: 0.0955
+Validation loss decreased (0.107593 --> 0.095499). Saving model ...
+NHITS_PhaseWarp | Epoch 9/15 | Train Loss: 0.0893 | Val Loss: 0.0908
+Validation loss decreased (0.095499 --> 0.090799). Saving model ...
+NHITS_PhaseWarp | Epoch 10/15 | Train Loss: 0.0866 | Val Loss: 0.0923
+EarlyStopping counter: 1 out of 5
+NHITS_PhaseWarp | Epoch 11/15 | Train Loss: 0.0876 | Val Loss: 0.0945
+EarlyStopping counter: 2 out of 5
+NHITS_PhaseWarp | Epoch 12/15 | Train Loss: 0.0875 | Val Loss: 0.0888
+Validation loss decreased (0.090799 --> 0.088792). Saving model ...
+NHITS_PhaseWarp | Epoch 13/15 | Train Loss: 0.0868 | Val Loss: 0.0907
+EarlyStopping counter: 1 out of 5
+NHITS_PhaseWarp | Epoch 14/15 | Train Loss: 0.0846 | Val Loss: 0.0896
+EarlyStopping counter: 2 out of 5
+NHITS_PhaseWarp | Epoch 15/15 | Train Loss: 0.0832 | Val Loss: 0.0914
+EarlyStopping counter: 3 out of 5
+NHITS_PhaseWarp weights saved to: D:\AAOzone\models\训练结果\nhits_phasewarp.pth
+NHITS_PhaseWarp Metrics | RMSE: 3.4069 | MAE: 2.1393 | R^2: 0.6759 | SMAPE: 58.75%
+
+[Comparison Summary]
+RMSE improvement: 0.6524
+MAE improvement : 0.6370
+R^2 gain        : 0.1360
+SMAPE gain      : 10.60%

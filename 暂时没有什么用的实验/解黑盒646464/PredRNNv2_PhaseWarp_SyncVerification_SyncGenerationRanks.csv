@@ -1,0 +1,4 @@
+feature_name,alpha,signal_std,noise_std,train_corr_with_o3,rank_noise_std_asc,rank_train_corr_desc
+V_sync_2,1.0,7.602559,0.608205,0.996814,2,2
+V_sync_3,1.0,7.602559,0.912307,0.992876,3,3
+V_sync,1.0,7.602559,0.380128,0.998752,1,1

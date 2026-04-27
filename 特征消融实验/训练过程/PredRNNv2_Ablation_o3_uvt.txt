@@ -1,0 +1,80 @@
+Training Device: cuda
+Running subset 13/16
+Configured ACTIVE_UVST_SUBSET: ('U', 'V', 'T')
+Subset tag: o3_uvt
+Input channels for this run: ('O3', 'U', 'V', 'T')
+
+[Experiment] PredRNNv2_Raw_o3_uvt
+PredRNNv2_Raw_o3_uvt | Epoch 1/15 | Train Loss: 0.0517 | Val Loss: 0.0647
+Validation loss decreased (inf -> 0.064659). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 2/15 | Train Loss: 0.0199 | Val Loss: 0.0446
+Validation loss decreased (0.064659 -> 0.044577). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 3/15 | Train Loss: 0.0140 | Val Loss: 0.0331
+Validation loss decreased (0.044577 -> 0.033088). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 4/15 | Train Loss: 0.0117 | Val Loss: 0.0254
+Validation loss decreased (0.033088 -> 0.025389). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 5/15 | Train Loss: 0.0105 | Val Loss: 0.0256
+EarlyStopping counter: 1 out of 5
+PredRNNv2_Raw_o3_uvt | Epoch 6/15 | Train Loss: 0.0094 | Val Loss: 0.0212
+Validation loss decreased (0.025389 -> 0.021210). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 7/15 | Train Loss: 0.0086 | Val Loss: 0.0224
+EarlyStopping counter: 1 out of 5
+PredRNNv2_Raw_o3_uvt | Epoch 8/15 | Train Loss: 0.0081 | Val Loss: 0.0208
+Validation loss decreased (0.021210 -> 0.020806). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 9/15 | Train Loss: 0.0078 | Val Loss: 0.0204
+Validation loss decreased (0.020806 -> 0.020414). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 10/15 | Train Loss: 0.0074 | Val Loss: 0.0208
+EarlyStopping counter: 1 out of 5
+PredRNNv2_Raw_o3_uvt | Epoch 11/15 | Train Loss: 0.0070 | Val Loss: 0.0218
+EarlyStopping counter: 2 out of 5
+PredRNNv2_Raw_o3_uvt | Epoch 12/15 | Train Loss: 0.0068 | Val Loss: 0.0191
+Validation loss decreased (0.020414 -> 0.019108). Saving model ...
+PredRNNv2_Raw_o3_uvt | Epoch 13/15 | Train Loss: 0.0066 | Val Loss: 0.0207
+EarlyStopping counter: 1 out of 5
+PredRNNv2_Raw_o3_uvt | Epoch 14/15 | Train Loss: 0.0063 | Val Loss: 0.0203
+EarlyStopping counter: 2 out of 5
+PredRNNv2_Raw_o3_uvt | Epoch 15/15 | Train Loss: 0.0063 | Val Loss: 0.0195
+EarlyStopping counter: 3 out of 5
+PredRNNv2_Raw_o3_uvt weights saved to: D:\AAOzone\models\训练结果\predrnnv2_raw_o3_uvt.pth
+PredRNNv2_Raw_o3_uvt Metrics | RMSE: 1.5397 | MAE: 0.8732 | R^2: 0.9338 | SMAPE: 26.29%
+
+[Experiment] PredRNNv2_PhaseWarp_o3_uvt
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 1/15 | Train Loss: 0.0323 | Val Loss: 0.0172
+Validation loss decreased (inf -> 0.017205). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 2/15 | Train Loss: 0.0095 | Val Loss: 0.0151
+Validation loss decreased (0.017205 -> 0.015146). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 3/15 | Train Loss: 0.0075 | Val Loss: 0.0131
+Validation loss decreased (0.015146 -> 0.013058). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 4/15 | Train Loss: 0.0068 | Val Loss: 0.0117
+Validation loss decreased (0.013058 -> 0.011705). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 5/15 | Train Loss: 0.0063 | Val Loss: 0.0123
+EarlyStopping counter: 1 out of 5
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 6/15 | Train Loss: 0.0059 | Val Loss: 0.0110
+Validation loss decreased (0.011705 -> 0.011024). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 7/15 | Train Loss: 0.0056 | Val Loss: 0.0109
+Validation loss decreased (0.011024 -> 0.010850). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 8/15 | Train Loss: 0.0053 | Val Loss: 0.0105
+Validation loss decreased (0.010850 -> 0.010468). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 9/15 | Train Loss: 0.0051 | Val Loss: 0.0097
+Validation loss decreased (0.010468 -> 0.009712). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 10/15 | Train Loss: 0.0050 | Val Loss: 0.0098
+EarlyStopping counter: 1 out of 5
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 11/15 | Train Loss: 0.0048 | Val Loss: 0.0098
+EarlyStopping counter: 2 out of 5
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 12/15 | Train Loss: 0.0047 | Val Loss: 0.0103
+EarlyStopping counter: 3 out of 5
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 13/15 | Train Loss: 0.0046 | Val Loss: 0.0101
+EarlyStopping counter: 4 out of 5
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 14/15 | Train Loss: 0.0045 | Val Loss: 0.0095
+Validation loss decreased (0.009712 -> 0.009478). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt | Epoch 15/15 | Train Loss: 0.0044 | Val Loss: 0.0093
+Validation loss decreased (0.009478 -> 0.009324). Saving model ...
+PredRNNv2_PhaseWarp_o3_uvt weights saved to: D:\AAOzone\models\训练结果\predrnnv2_phasewarp_o3_uvt.pth
+PredRNNv2_PhaseWarp_o3_uvt Metrics | RMSE: 1.0404 | MAE: 0.6241 | R^2: 0.9698 | SMAPE: 20.93%
+
+[Comparison Summary]
+RMSE improvement: 0.4993
+MAE improvement : 0.2491
+R^2 gain        : 0.0360
+SMAPE gain      : 5.37%
+Summary updated: D:\AAOzone\models\训练结果\predrnnv2_uvst_ablation_summary.txt
